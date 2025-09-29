@@ -6,55 +6,56 @@
 
 @layer base {
   :root {
-    /* Base colors - Professional palette */
-    --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    /* Base colors - Dark theme with custom colors */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
 
     /* Card system */
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
 
     /* Popover system */
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Primary - Deep blue inspired by professional design */
-    --primary: 215 70% 25%;
+    /* Primary - Custom dark red #802525 */
+    --primary: 0 52% 32%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 215 70% 20%;
+    --primary-hover: 0 52% 28%;
 
-    /* Secondary - Soft gray for subtle elements */
-    --secondary: 210 15% 96%;
-    --secondary-foreground: 215 25% 25%;
+    /* Secondary - Dark grays from gradient */
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 85%;
 
-    /* Accent - Subtle Pokémon-inspired but professional */
-    --accent: 260 60% 65%;
+    /* Accent - Lighter version of primary for highlights */
+    --accent: 0 45% 45%;
     --accent-foreground: 0 0% 98%;
-    --accent-light: 260 40% 90%;
+    --accent-light: 0 30% 85%;
 
     /* Muted tones */
-    --muted: 210 15% 95%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
     /* Utility colors */
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
-    --border: 215 15% 90%;
-    --input: 215 15% 90%;
-    --ring: 215 70% 25%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 52% 32%;
 
     /* Design tokens */
     --radius: 0.75rem;
     
-    /* Custom gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(215 70% 25%) 0%, hsl(260 60% 65%) 100%);
-    --gradient-feature: linear-gradient(180deg, hsl(210 15% 98%) 0%, hsl(210 15% 95%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(260 60% 65%) 0%, hsl(280 50% 70%) 100%);
+    /* Custom gradients using specified colors */
+    --gradient-hero: linear-gradient(135deg, hsl(0 52% 32%) 0%, hsl(0 0% 18%) 100%);
+    --gradient-feature: linear-gradient(180deg, hsl(0 0% 18%) 0%, hsl(0 0% 10%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(0 45% 45%) 0%, hsl(0 52% 32%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 18%) 0%, hsl(0 0% 10%) 100%);
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(215 25% 15% / 0.1);
-    --shadow-medium: 0 8px 30px -6px hsl(215 25% 15% / 0.15);
-    --shadow-large: 0 20px 50px -12px hsl(215 25% 15% / 0.25);
+    /* Shadows - Updated for dark theme */
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 30px -6px hsl(0 0% 0% / 0.4);
+    --shadow-large: 0 20px 50px -12px hsl(0 0% 0% / 0.5);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
