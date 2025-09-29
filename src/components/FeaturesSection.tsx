@@ -46,7 +46,7 @@ const cardVariants = {
 
 const FeaturesSection = () => {
   return (
-    <section className="relative py-28 bg-gradient-to-b from-background via-background/95 to-background">
+    <section id = "features" className="relative py-28 bg-gradient-to-b from-background via-background/95 to-background">
       <div className="container mx-auto px-6">
         {/* Section Heading */}
         <div className="text-center mb-20">

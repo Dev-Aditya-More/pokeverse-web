@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { Github } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -17,20 +18,31 @@ const HeroSection = () => {
             Your ultimate Pokémon companion
           </p>
           <p className="text-lg md:text-xl mb-12 text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            Discover, search, and collect your favorite Pokémon with the most comprehensive and user-friendly companion app available.
+            Discover, search, and collect your favorite Pokémon with the most
+            comprehensive and user-friendly companion app available.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="xl" className="min-w-[200px]">
-              <Download className="mr-2 h-5 w-5" />
-              Coming Soon
+            <Button asChild variant="hero" size="xl" className="min-w-[200px]">
+              <a href="#download">
+                <Download className="mr-2 h-5 w-5" />
+                Coming Soon
+              </a>
             </Button>
+
             <Button
+              asChild
               variant="outline"
-              size="xl"
-              className="min-w-[200px] bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white"
+              size="icon"
+              className="w-12 h-12 bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white rounded-full"
             >
-              Learn More
+              <a
+                href="https://github.com/your-username/your-repo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="h-6 w-6" />
+              </a>
             </Button>
           </div>
         </div>
@@ -45,7 +57,11 @@ const HeroSection = () => {
           strokeWidth={2}
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
         <span className="text-base text-white/80 font-light tracking-wider mt-1">
           Scroll
