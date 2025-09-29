@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="mb-8">
             <h3 className="text-2xl font-bold mb-4">Pokeverse</h3>
             <p className="text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
-              Built with passion for the Pokémon community. Bringing trainers closer to their favorite Pokémon with beautiful, intuitive design.
+              Built with passion and ❤️ for the Pokémon community. Bringing trainers closer to their favorite Pokémon with beautiful, intuitive design.
             </p>
           </div>
           
@@ -31,7 +31,7 @@ const Footer = () => {
           <div className="border-t border-primary-foreground/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-primary-foreground/60 text-sm">
-                <p>© 2024 Pokeverse. Created by [Your Name].</p>
+                <p>© 2024 Pokeverse. Aditya More.</p>
               </div>
               <div className="flex space-x-6 text-sm">
                 <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth">

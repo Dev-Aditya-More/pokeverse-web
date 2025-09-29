@@ -1,22 +1,41 @@
-import screenshot1 from "@/assets/app-screenshot-1.jpg";
-import screenshot2 from "@/assets/app-screenshot-2.jpg";
-import screenshot3 from "@/assets/app-screenshot-3.jpg";
+import screenshot1 from "@/assets/1.png";
+import screenshot2 from "@/assets/2.png";
+import screenshot3 from "@/assets/3.png";
+import screenshot4 from "@/assets/4.png";
+import screenshot5 from "@/assets/5.png";
+import screenshot6 from "@/assets/6.png";
+
 
 const screenshots = [
   {
     src: screenshot1,
-    alt: "Pokeverse app main interface showing Pokémon grid",
+    alt: "Pokeverse app main interface showing Pokémon grid with search and filter options",
     title: "Discover & Browse"
   },
   {
     src: screenshot2,
-    alt: "Pokémon detail view with comprehensive information",
-    title: "Detailed Information"
+    alt: "Detailed Pokémon team screen displaying stats, abilities, and moves",
+    title: "Team Information"
   },
   {
     src: screenshot3,
-    alt: "Favorites collection screen",
-    title: "Personal Collection"
+    alt: "Customise with Particle Effects",
+    title: "Settings Info"
+  },
+  {
+    src: screenshot4,
+    alt: "Pokémon detail view with artwork, abilities, and type effectiveness",
+    title: "In-Depth Details"
+  },
+  {
+    src: screenshot5,
+    alt: "Mega Evolutions at their very best",
+    title: "Pokemon mega evolutions"
+  },
+  {
+    src: screenshot6,
+    alt: "Unleash Legendary powers",
+    title: "Pokeverse Legends"
   }
 ];
 

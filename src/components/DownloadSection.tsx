@@ -23,7 +23,7 @@ const DownloadSection = () => {
                 Be the first to know
               </h3>
               <p className="text-muted-foreground mb-8">
-                Pokeverse is launching soon on the App Store and Google Play. Sign up to get notified when it's available.
+                Pokeverse is launching soon on the Google Play. Sign up to get notified when it's available.
               </p>
             </div>
             
@@ -46,9 +46,6 @@ const DownloadSection = () => {
           <div className="opacity-50">
             <p className="text-sm text-muted-foreground mb-4">Available soon on</p>
             <div className="flex justify-center space-x-4">
-              <div className="w-40 h-12 bg-muted rounded-lg flex items-center justify-center">
-                <span className="text-xs text-muted-foreground">App Store</span>
-              </div>
               <div className="w-40 h-12 bg-muted rounded-lg flex items-center justify-center">
                 <span className="text-xs text-muted-foreground">Google Play</span>
               </div>

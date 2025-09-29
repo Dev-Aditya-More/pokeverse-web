@@ -1,68 +1,99 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Search, Heart, Database, Smartphone, Filter } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
     icon: Database,
     title: "Complete Pokédex",
-    description: "Access detailed information about all Pokémon across every generation with comprehensive stats, types, and evolution chains."
+    description:
+      "Explore every generation with detailed stats, types, evolutions, and hidden abilities at your fingertips."
   },
   {
     icon: Search,
     title: "Smart Search",
-    description: "Find any Pokémon instantly with our powerful search functionality. Search by name, type, generation, or abilities."
+    description:
+      "Instantly locate any Pokémon by name, type, generation, or ability with blazing-fast search."
   },
   {
     icon: Filter,
     title: "Advanced Filters",
-    description: "Filter Pokémon by type, generation, stats, and more to find exactly what you're looking for with precision."
+    description:
+      "Slice through the Pokédex with precision filters—narrow down by stats, rarity, or even custom tags."
   },
   {
     icon: Heart,
     title: "Personal Favorites",
-    description: "Save your favorite Pokémon to your personal collection and access them quickly whenever you need."
+    description:
+      "Curate your own Pokémon collection and access your favorites instantly anytime."
   },
   {
     icon: Smartphone,
     title: "Clean Interface",
-    description: "Enjoy a beautiful, intuitive interface designed for both casual fans and serious trainers with seamless navigation."
+    description:
+      "An elegant, intuitive design tailored for both casual fans and seasoned trainers."
   }
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" }
+  })
+};
+
 const FeaturesSection = () => {
   return (
-    <section className="py-24 bg-gradient-feature">
+    <section className="relative py-28 bg-gradient-to-b from-background via-background/95 to-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        {/* Section Heading */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-6">
             Everything you need
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Pokeverse combines powerful features with elegant design to create the perfect Pokémon companion experience.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Pokeverse blends powerful tools with elegant design to deliver the ultimate Pokémon companion.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+        {/* Feature Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <Card 
-              key={feature.title} 
-              className="group hover:shadow-medium transition-smooth bg-card/50 backdrop-blur-sm border-border/50 hover:border-accent/50"
-              style={{ animationDelay: `${index * 0.1}s` }}
+            <motion.div
+              key={feature.title}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={index}
             >
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-bounce">
-                  <feature.icon className="h-8 w-8 text-accent-foreground" />
-                </div>
-                <CardTitle className="text-xl font-semibold text-foreground">
-                  {feature.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                <CardDescription className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+              <Card className="group relative bg-card/60 backdrop-blur-lg border border-border/40 shadow-lg rounded-2xl p-6 
+                               transition-all duration-300 hover:shadow-2xl hover:border-accent/60 hover:-translate-y-2">
+                <CardHeader className="flex flex-col items-center">
+                  {/* Icon wrapper */}
+                  <div className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center 
+                                  bg-gradient-to-tr from-accent to-accent/60 shadow-md 
+                                  group-hover:scale-110 group-hover:shadow-accent/50 
+                                  transition-transform duration-300 ease-out">
+                    <feature.icon className="h-8 w-8 text-accent-foreground" />
+                  </div>
+
+                  {/* Title */}
+                  <CardTitle className="text-xl font-semibold text-foreground text-center">
+                    {feature.title}
+                  </CardTitle>
+                </CardHeader>
+
+                {/* Description */}
+                <CardContent className="text-center">
+                  <CardDescription className="text-muted-foreground leading-relaxed text-base">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
