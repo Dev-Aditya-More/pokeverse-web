@@ -38,10 +38,10 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center overflow-hidden">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce"></div>
+        <div className="w-8 h-14 border-2 border-white/40 bg-white/5 rounded-full flex justify-center items-start shadow-lg relative">
+          <div className="w-2 h-4 bg-white/70 rounded-full absolute left-1/2 -translate-x-1/2 mt-3 animate-bounce"></div>
         </div>
-        <span className="text-sm text-white/70 font-light tracking-wider">
+        <span className="text-base text-white/80 font-light tracking-wider mt-1">
           Scroll
         </span>
       </div>

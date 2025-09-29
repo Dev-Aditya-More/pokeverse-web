@@ -57,7 +57,7 @@ const WhyPokeverse = () => {
           
           <div className="text-center">
             <p className="text-2xl font-light mb-8 opacity-90">
-              Join thousands of trainers who have already discovered the difference.
+              Be among the first trainers to experience the difference.
             </p>
             <div className="flex justify-center space-x-12 opacity-80">
               <div className="text-center">
