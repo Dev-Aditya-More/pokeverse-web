@@ -66,19 +66,19 @@ const Footer = () => {
               </div>
               <div className="flex space-x-6 text-sm">
                 <a
-                  href="#"
+                  href="https://github.com/Dev-Aditya-More/PokeVerse/blob/master/Privacy_Policy.md"
                   className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
                 >
                   Privacy Policy
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/Dev-Aditya-More/PokeVerse/blob/master/Terms_of_service.md"
                   className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
                 >
                   Terms of Service
                 </a>
                 <a
-                  href="#"
+                  href="mailto:aditya1875more@gmail.com"
                   className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
                 >
                   Contact
@@ -90,7 +90,7 @@ const Footer = () => {
           <div className="mt-8 text-xs text-primary-foreground/40">
             <p>
               Pokémon and related characters are trademarks of Nintendo, Game
-              Freak, and Creatures Inc.
+              Freak, and PokeApi.co.
             </p>
           </div>
         </div>
