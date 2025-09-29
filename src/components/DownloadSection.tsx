@@ -10,9 +10,10 @@ const DownloadSection = () => {
             Get Pokeverse today
           </h2>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            Ready to enhance your Pokémon journey? Download Pokeverse and start exploring the world of Pokémon like never before.
+            Ready to enhance your Pokémon journey? Download Pokeverse and start
+            exploring the world of Pokémon like never before.
           </p>
-          
+
           <div className="bg-card rounded-2xl shadow-large p-8 md:p-12 mb-12">
             <div className="mb-8">
               <div className="inline-flex items-center px-4 py-2 bg-accent-light rounded-full text-accent text-sm font-medium mb-6">
@@ -23,32 +24,74 @@ const DownloadSection = () => {
                 Be the first to know
               </h3>
               <p className="text-muted-foreground mb-8">
-                Pokeverse is launching soon on the Google Play. Sign up to get notified when it's available.
+                Pokeverse is launching soon on the Google Play. Sign up to get
+                notified when it's available — or try it early via APK download.
               </p>
             </div>
-            
+
+            {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" className="min-w-[200px]">
-                <Download className="mr-2 h-5 w-5" />
-                Notify Me
+              <Button
+                asChild
+                variant="hero"
+                size="xl"
+                className="min-w-[200px]"
+              >
+                <a href="mailto:aditya1875more@gmail.com?subject=Notify%20Me%20-%20Pokeverse&body=I%20want%20to%20be%20notified%20when%20Pokeverse%20launches.">
+                  <Download className="mr-2 h-5 w-5" />
+                  Notify Me
+                </a>
               </Button>
-              <Button variant="outline" size="xl" className="min-w-[200px]">
-                View Features
+
+              <Button
+                asChild
+                variant="outline"
+                size="xl"
+                className="min-w-[200px]"
+              >
+                <a href="#features">View Features</a>
               </Button>
             </div>
-            
+
             <div className="mt-8 text-sm text-muted-foreground">
               <p>Free download • No ads • Regular updates</p>
             </div>
           </div>
-          
-          {/* Placeholder for store badges when available */}
-          <div className="opacity-50">
-            <p className="text-sm text-muted-foreground mb-4">Available soon on</p>
-            <div className="flex justify-center space-x-4">
-              <div className="w-40 h-12 bg-muted rounded-lg flex items-center justify-center">
-                <span className="text-xs text-muted-foreground">Google Play</span>
+
+          {/* Download Options */}
+          <div className="space-y-6">
+            {/* Google Play placeholder */}
+            <div className="opacity-50">
+              <p className="text-sm text-muted-foreground mb-4">
+                Available soon on
+              </p>
+              <div className="flex justify-center space-x-4">
+                <div className="w-40 h-12 bg-muted rounded-lg flex items-center justify-center">
+                  <span className="text-xs text-muted-foreground">
+                    Google Play
+                  </span>
+                </div>
               </div>
+            </div>
+
+            {/* Direct APK Download */}
+            <div>
+              <p className="text-sm text-muted-foreground mb-4">
+                Or download the APK now
+              </p>
+              <Button
+                asChild
+                size="xl"
+                className="min-w-[220px] bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                <a
+                  href="https://github.com/Dev-Aditya-More/PokeVerse/releases"
+                  download
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download APK
+                </a>
+              </Button>
             </div>
           </div>
         </div>
