@@ -37,7 +37,7 @@ const HeroSection = () => {
               className="w-12 h-12 bg-white/10 border-white/30 text-white hover:bg-white/20 hover:text-white rounded-full"
             >
               <a
-                href="https://github.com/your-username/your-repo"
+                href="https://github.com/Dev-Aditya-More/PokeVerse"
                 target="_blank"
                 rel="noopener noreferrer"
               >
