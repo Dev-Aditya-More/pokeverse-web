@@ -38,7 +38,7 @@ const Footer = () => {
               className="text-primary-foreground hover:text-primary hover:bg-primary-foreground/10"
             >
               <a
-                href="https://twitter.com/Adityaastwt"
+                href="https://twitter.com/Pokeverse_App"
                 target="_blank"
                 rel="noopener noreferrer"
               >
