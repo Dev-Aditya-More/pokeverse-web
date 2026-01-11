@@ -69,7 +69,7 @@ const WhyPokeverse = () => {
                 <div className="text-sm text-white/70">Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white"> 900+ </div>
+                <div className="text-3xl font-bold text-white"> 1000+ </div>
                 <div className="text-sm text-white/70">Pokémon</div>
               </div>
             </div>
