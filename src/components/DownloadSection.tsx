@@ -74,7 +74,7 @@ const DownloadSection = () => {
                 size="lg"
                 className="min-w-[200px]"
               >
-                <a href="https://play.google.com/store/apps/details?id=com.aditya1875.pokeverse.play">
+                <a href="https://play.google.com/apps/testing/com.aditya1875.pokeverse.play">
                   Try Early Access
                 </a>
               </Button>
