@@ -74,8 +74,8 @@ const DownloadSection = () => {
                 size="lg"
                 className="min-w-[200px]"
               >
-                <a href="mailto:aditya1875more@gmail.com?subject=Notify%20Me%20-%20Pokeverse&body=I%20want%20to%20be%20notified%20when%20Pokeverse%20launches%20on%20Google%20Play.">
-                  Notify Me
+                <a href="https://play.google.com/store/apps/details?id=com.aditya1875.pokeverse.play">
+                  Try Early Access
                 </a>
               </Button>
             </div>
