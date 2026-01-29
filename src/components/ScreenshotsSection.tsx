@@ -13,12 +13,12 @@ const screenshots = [
     title: "Discover & Browse"
   },
   {
-    src: screenshot3,
+    src: screenshot2,
     alt: "Pokémon detail view with artwork, abilities, and type effectiveness",
     title: "In-Depth Details"
   },
   {
-    src: screenshot2,
+    src: screenshot3,
     alt: "Detailed Pokémon team screen displaying stats, abilities, and moves",
     title: "Team Builder"
   },
