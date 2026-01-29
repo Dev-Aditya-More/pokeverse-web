@@ -13,30 +13,30 @@ const screenshots = [
     title: "Discover & Browse"
   },
   {
-    src: screenshot2,
-    alt: "Detailed Pokémon team screen displaying stats, abilities, and moves",
-    title: "Team Information"
-  },
-  {
     src: screenshot3,
-    alt: "Customise with Particle Effects",
-    title: "Settings Info"
-  },
-  {
-    src: screenshot4,
     alt: "Pokémon detail view with artwork, abilities, and type effectiveness",
     title: "In-Depth Details"
   },
   {
+    src: screenshot2,
+    alt: "Detailed Pokémon team screen displaying stats, abilities, and moves",
+    title: "Team Builder"
+  },
+  {
+    src: screenshot4,
+    alt: "Team analysis screen with charts and type coverage",
+    title: "Analyse like never before"
+  },
+  {
     src: screenshot5,
-    alt: "Mega Evolutions at their very best",
-    title: "Pokemon mega evolutions"
+    alt: "Choose your comfort theme screen with light and dark mode options",
+    title: "Choose your comfort theme"
   },
   {
     src: screenshot6,
-    alt: "Unleash Legendary powers",
-    title: "Pokeverse Legends"
-  }
+    alt: "Customise with Particle Effects",
+    title: "Settings Info"
+  },
 ];
 
 const ScreenshotsSection = () => {
