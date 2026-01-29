@@ -5,7 +5,6 @@ import screenshot4 from "@/assets/4.png";
 import screenshot5 from "@/assets/5.png";
 import screenshot6 from "@/assets/6.png";
 
-
 const screenshots = [
   {
     src: screenshot1,
@@ -36,7 +35,7 @@ const screenshots = [
     src: screenshot6,
     alt: "Customise with Particle Effects",
     title: "Settings Info"
-  },
+  }
 ];
 
 const ScreenshotsSection = () => {
