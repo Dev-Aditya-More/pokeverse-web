@@ -17,7 +17,7 @@ const DownloadSection = () => {
 
           {/* Main Card */}
           <div className="bg-card rounded-2xl shadow-large p-8 md:p-12 mb-14">
-            {/* Available Now */}
+            {/* Available Now - Google Play */}
             <div className="mb-10">
               <div className="inline-flex items-center px-4 py-2 bg-accent-light rounded-full text-accent text-sm font-medium mb-6">
                 <Store className="w-4 h-4 mr-2" />
@@ -25,12 +25,12 @@ const DownloadSection = () => {
               </div>
 
               <h3 className="text-2xl font-semibold text-foreground mb-4">
-                Download from Indus App Store
+                Download from Google Play
               </h3>
 
               <p className="text-muted-foreground mb-8">
-                Pokeverse is officially live on the Indus App Store. Download it
-                now and start exploring.
+                Pokeverse is now live on Google Play. Download it and start
+                building your teams today.
               </p>
 
               <Button
@@ -39,12 +39,12 @@ const DownloadSection = () => {
                 className="min-w-[240px] bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 <a
-                  href="https://indusapp.store/5pzliyk1"
+                  href="https://play.google.com/store/apps/details?id=com.aditya1875.pokeverse.play"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Download className="mr-2 h-5 w-5" />
-                  Get it on Indus
+                  Get it on Google Play
                 </a>
               </Button>
             </div>
@@ -52,20 +52,19 @@ const DownloadSection = () => {
             {/* Divider */}
             <div className="h-px bg-border my-10" />
 
-            {/* Coming Soon */}
+            {/* Secondary - Indus */}
             <div className="mb-8">
               <div className="inline-flex items-center px-4 py-2 bg-muted rounded-full text-muted-foreground text-sm font-medium mb-6">
                 <Bell className="w-4 h-4 mr-2" />
-                Coming soon
+                Also available
               </div>
 
               <h3 className="text-xl font-semibold text-foreground mb-3">
-                Google Play launch
+                Indus App Store
               </h3>
 
               <p className="text-muted-foreground mb-6">
-                Pokeverse is launching soon on Google Play. Get notified when it
-                goes live.
+                You can also download Pokeverse from the Indus App Store.
               </p>
 
               <Button
@@ -74,8 +73,12 @@ const DownloadSection = () => {
                 size="lg"
                 className="min-w-[200px]"
               >
-                <a href="https://play.google.com/store/apps/details?id=com.aditya1875.pokeverse.play">
-                  Try Early Access
+                <a
+                  href="https://indusapp.store/5pzliyk1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get it on Indus
                 </a>
               </Button>
             </div>
