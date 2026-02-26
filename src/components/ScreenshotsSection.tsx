@@ -4,6 +4,8 @@ import screenshot3 from "@/assets/3.png";
 import screenshot4 from "@/assets/4.png";
 import screenshot5 from "@/assets/5.png";
 import screenshot6 from "@/assets/6.png";
+import screenshot7 from "@/assets/7.png";
+import screenshot8 from "@/assets/8.png";
 
 const screenshots = [
   {
@@ -19,17 +21,27 @@ const screenshots = [
   {
     src: screenshot3,
     alt: "Detailed Pokémon team screen displaying stats, abilities, and moves",
-    title: "Team Builder"
+    title: "Build unlimited teams"
   },
   {
     src: screenshot4,
     alt: "Team analysis screen with charts and type coverage",
-    title: "Analyse like never before"
+    title: "Team Analysis"
+  },
+  {
+    src: screenshot8,
+    alt: "Choose your comfort theme screen with light and dark mode options",
+    title: "Choose your comfort theme"
   },
   {
     src: screenshot5,
-    alt: "Choose your comfort theme screen with light and dark mode options",
-    title: "Choose your comfort theme"
+    alt: "Relax and Play Mini Games",
+    title: "Mini Games"
+  },
+  {
+    src: screenshot7,
+    alt: "Legendaries from every region",
+    title: "Pokeverse Legends"
   },
   {
     src: screenshot6,
