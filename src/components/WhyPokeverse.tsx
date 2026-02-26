@@ -61,11 +61,11 @@ const WhyPokeverse = () => {
             </p>
             <div className="flex justify-center space-x-12 opacity-80">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white"> - </div>
+                <div className="text-3xl font-bold text-white"> 1k+ </div>
                 <div className="text-sm text-white/70">Downloads</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white"> - </div>
+                <div className="text-3xl font-bold text-white"> 4.8/5 </div>
                 <div className="text-sm text-white/70">Rating</div>
               </div>
               <div className="text-center">
