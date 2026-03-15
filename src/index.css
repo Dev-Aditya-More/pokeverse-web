@@ -2,80 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Pokeverse Design System - Professional & Clean */
+/* Dexverse Design System - Professional & Clean */
 
 @layer base {
   :root {
-    /* Base colors - Dark theme with custom colors */
-    --background: 0 0% 10%;
-    --foreground: 0 0% 95%;
+    /* Background */
+    --background: 222 47% 8%;
+    --foreground: 220 30% 96%;
 
-    /* Card system */
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 95%;
+    /* Cards */
+    --card: 222 40% 12%;
+    --card-foreground: 220 30% 96%;
 
-    /* Popover system */
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 95%;
+    /* Popover */
+    --popover: 222 40% 12%;
+    --popover-foreground: 220 30% 96%;
 
-    /* Primary - Custom dark red #802525 */
-    --primary: 0 52% 32%;
-    --primary-foreground: 0 0% 98%;
-    --primary-hover: 0 52% 28%;
+    /* Primary = Dex Blue */
+    --primary: 222 70% 40%;
+    --primary-foreground: 220 30% 96%;
 
-    /* Secondary - Dark grays from gradient */
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 85%;
+    /* Secondary surfaces */
+    --secondary: 222 30% 18%;
+    --secondary-foreground: 220 30% 90%;
 
-    /* Accent - Lighter version of primary for highlights */
-    --accent: 0 45% 45%;
-    --accent-foreground: 0 0% 98%;
-    --accent-light: 0 30% 85%;
+    /* Accent Cyan */
+    --accent: 190 100% 60%;
+    --accent-foreground: 220 30% 96%;
 
-    /* Muted tones */
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    /* Warm highlight */
+    --accent-warm: 18 100% 60%;
 
-    /* Utility colors */
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 52% 32%;
+    /* Muted */
+    --muted: 222 30% 14%;
+    --muted-foreground: 220 15% 65%;
 
-    /* Design tokens */
+    /* Borders */
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 190 100% 60%;
+
+    /* Radius */
     --radius: 0.75rem;
-    
-    /* Custom gradients using specified colors */
-    --gradient-hero: linear-gradient(135deg, hsl(0 52% 32%) 0%, hsl(0 0% 18%) 100%);
-    --gradient-feature: linear-gradient(180deg, hsl(0 0% 18%) 0%, hsl(0 0% 10%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(0 45% 45%) 0%, hsl(0 52% 32%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 18%) 0%, hsl(0 0% 10%) 100%);
-    
-    /* Shadows - Updated for dark theme */
-    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-medium: 0 8px 30px -6px hsl(0 0% 0% / 0.4);
-    --shadow-large: 0 20px 50px -12px hsl(0 0% 0% / 0.5);
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-    --sidebar-background: 0 0% 98%;
+    /* Gradients */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --gradient-hero: linear-gradient(135deg,
+        hsl(222 70% 40%) 0%,
+        hsl(222 47% 8%) 70%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    --gradient-accent: linear-gradient(135deg,
+        hsl(190 100% 60%) 0%,
+        hsl(18 100% 60%) 100%);
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --gradient-feature: linear-gradient(180deg,
+        hsl(222 30% 18%) 0%,
+        hsl(222 47% 8%) 100%);
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Shadows */
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --shadow-soft: 0 4px 20px -4px hsl(222 80% 2% / 0.4);
 
-    --sidebar-border: 220 13% 91%;
+    --shadow-medium: 0 8px 30px -6px hsl(222 80% 2% / 0.5);
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --shadow-large: 0 20px 50px -12px hsl(222 80% 2% / 0.6);
   }
 
   .dark {
@@ -88,7 +78,6 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -124,6 +113,10 @@
 
   body {
     @apply bg-background text-foreground;
+
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(61, 217, 255, 0.15), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255, 122, 69, 0.12), transparent 40%);
   }
 }
 

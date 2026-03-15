@@ -21,12 +21,12 @@ const benefits = [
 
 const WhyPokeverse = () => {
   return (
-    <section className="py-24 bg-gradient-accent text-accent-foreground">
+    <section className="relative py-24 bg-[var(--gradient-feature)] text-foreground overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why choose Pokeverse?
+              Why choose Dexverse?
             </h2>
             <p className="text-xl opacity-90 leading-relaxed">
               We've reimagined what a Pokémon companion app should be - simple, powerful, and delightful to use.
@@ -61,7 +61,7 @@ const WhyPokeverse = () => {
             </p>
             <div className="flex justify-center space-x-12 opacity-80">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white"> 1k+ </div>
+                <div className="text-3xl font-bold text-white"> 2k+ </div>
                 <div className="text-sm text-white/70">Downloads</div>
               </div>
               <div className="text-center">

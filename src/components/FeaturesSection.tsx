@@ -54,7 +54,7 @@ const FeaturesSection = () => {
             Everything you need
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Pokeverse blends powerful tools with elegant design to deliver the ultimate Pokémon companion.
+            Dexverse blends powerful tools with elegant design to deliver the ultimate Pokémon companion.
           </p>
         </div>
 
@@ -63,7 +63,6 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}

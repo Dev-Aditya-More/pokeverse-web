@@ -8,7 +8,7 @@ const DownloadSection = () => {
         <div className="max-w-3xl mx-auto">
           {/* Heading */}
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Get Pokeverse today
+            Get Dexverse today
           </h2>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
             Explore Pokémon data, stats, and regions with a fast, beautifully
@@ -29,7 +29,7 @@ const DownloadSection = () => {
               </h3>
 
               <p className="text-muted-foreground mb-8">
-                Pokeverse is now live on Google Play. Download it and start
+                Dexverse is now live on Google Play. Download it and start
                 building your teams today.
               </p>
 
@@ -64,7 +64,7 @@ const DownloadSection = () => {
               </h3>
 
               <p className="text-muted-foreground mb-6">
-                You can also download Pokeverse from the Indus App Store.
+                You can also download Dexverse (Pokeverse) from the Indus App Store.
               </p>
 
               <Button

@@ -10,17 +10,17 @@ import screenshot8 from "@/assets/8.png";
 const screenshots = [
   {
     src: screenshot1,
-    alt: "Pokeverse app main interface showing Pokémon grid with search and filter options",
+    alt: "Dexverse app main interface showing Pokémon grid with search and filter options",
     title: "Discover & Browse"
   },
   {
     src: screenshot2,
-    alt: "Pokémon detail view with artwork, abilities, and type effectiveness",
+    alt: "Dexverse Pokémon detail view with artwork, abilities, and type effectiveness",
     title: "In-Depth Details"
   },
   {
     src: screenshot3,
-    alt: "Detailed Pokémon team screen displaying stats, abilities, and moves",
+    alt: "Dexverse detailed Pokémon team screen displaying stats, abilities, and moves",
     title: "Build unlimited teams"
   },
   {
@@ -41,7 +41,7 @@ const screenshots = [
   {
     src: screenshot7,
     alt: "Legendaries from every region",
-    title: "Pokeverse Legends"
+    title: "Dexverse Legends"
   },
   {
     src: screenshot6,

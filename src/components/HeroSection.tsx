@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto animate-fade-in">
           {/* Brand */}
           <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight mb-6">
-            Pokeverse
+            Dexverse
           </h1>
 
           {/* Statement */}
@@ -45,7 +45,7 @@ const HeroSection = () => {
                 href="https://github.com/Dev-Aditya-More/PokeVerse"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Pokeverse on GitHub"
+                aria-label="Dexverse on GitHub"
               >
                 <Github className="h-6 w-6" />
               </a>
