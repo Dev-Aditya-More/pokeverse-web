@@ -62,7 +62,7 @@ const Footer = () => {
           <div className="border-t border-primary-foreground/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-primary-foreground/60 text-sm">
-                <p>© 2024 Dexverse. Aditya More.</p>
+                <p>© 2026 Dexverse. Aditya More.</p>
               </div>
               <div className="flex space-x-6 text-sm">
                 <a
