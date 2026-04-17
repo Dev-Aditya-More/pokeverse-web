@@ -49,6 +49,12 @@ const DownloadSection = () => {
               </Button>
             </div>
           </div>
+
+          <div className="space-y-6">
+            <p className="text-sm text-muted-foreground">
+              Free download • No ads • Regular updates
+            </p>
+          </div>
         </div>
       </div>
     </section>
