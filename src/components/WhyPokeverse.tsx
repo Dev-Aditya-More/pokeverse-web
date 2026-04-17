@@ -4,7 +4,7 @@ import { Zap, Shield, Users } from "lucide-react";
 const benefits = [
   {
     icon: Zap,
-    title: "Lightning Fast",
+    title: "Smooth and Fast",
     description: "Instant search results and smooth navigation make finding information effortless."
   },
   {
@@ -61,7 +61,7 @@ const WhyPokeverse = () => {
             </p>
             <div className="flex justify-center space-x-12 opacity-80">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white"> 2k+ </div>
+                <div className="text-3xl font-bold text-white"> 5k+ </div>
                 <div className="text-sm text-white/70">Downloads</div>
               </div>
               <div className="text-center">
