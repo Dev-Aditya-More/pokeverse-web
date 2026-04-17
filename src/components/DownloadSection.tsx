@@ -48,67 +48,6 @@ const DownloadSection = () => {
                 </a>
               </Button>
             </div>
-
-            {/* Divider */}
-            <div className="h-px bg-border my-10" />
-
-            {/* Secondary - Indus */}
-            <div className="mb-8">
-              <div className="inline-flex items-center px-4 py-2 bg-muted rounded-full text-muted-foreground text-sm font-medium mb-6">
-                <Bell className="w-4 h-4 mr-2" />
-                Also available
-              </div>
-
-              <h3 className="text-xl font-semibold text-foreground mb-3">
-                Indus App Store
-              </h3>
-
-              <p className="text-muted-foreground mb-6">
-                You can also download Dexverse (Pokeverse) from the Indus App Store.
-              </p>
-
-              <Button
-                asChild
-                variant="hero"
-                size="lg"
-                className="min-w-[200px]"
-              >
-                <a
-                  href="https://indusapp.store/5pzliyk1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Get it on Indus
-                </a>
-              </Button>
-            </div>
-          </div>
-
-          {/* Secondary Options */}
-          <div className="space-y-6">
-            <div>
-              <p className="text-sm text-muted-foreground mb-4">
-                Prefer manual installation?
-              </p>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="min-w-[220px]"
-              >
-                <a
-                  href="https://github.com/Dev-Aditya-More/PokeVerse/releases/latest"
-                  download
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download APK
-                </a>
-              </Button>
-            </div>
-
-            <p className="text-sm text-muted-foreground">
-              Free download • No ads • Regular updates
-            </p>
           </div>
         </div>
       </div>
