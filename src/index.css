@@ -33,6 +33,9 @@
     /* Warm highlight */
     --accent-warm: 18 100% 60%;
 
+    /* Energy yellow */
+    --accent-yellow: 45 96% 65%;
+
     /* Muted */
     --muted: 222 30% 14%;
     --muted-foreground: 220 15% 65%;
@@ -115,11 +118,48 @@
     @apply bg-background text-foreground;
 
     background-image:
-      radial-gradient(circle at 20% 30%, rgba(61, 217, 255, 0.15), transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(255, 122, 69, 0.12), transparent 40%);
+      radial-gradient(ellipse at 15% 20%, rgba(61, 217, 255, 0.20), transparent 45%),
+      radial-gradient(ellipse at 85% 80%, rgba(255, 122, 69, 0.16), transparent 45%),
+      radial-gradient(ellipse at 50% 55%, rgba(90, 60, 200, 0.09), transparent 40%);
   }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .shimmer-text {
+    background: linear-gradient(
+      90deg,
+      hsl(190, 100%, 72%) 0%,
+      hsl(0, 0%, 100%) 35%,
+      hsl(18, 100%, 68%) 65%,
+      hsl(190, 100%, 72%) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 5s linear infinite;
+  }
+
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 24px hsl(190 100% 60% / 0.35), 0 0 60px hsl(190 100% 60% / 0.12);
+  }
+
+  .glow-warm {
+    box-shadow: 0 0 24px hsl(18 100% 60% / 0.35), 0 0 60px hsl(18 100% 60% / 0.12);
+  }
+
+  .border-gradient-accent {
+    border-image: var(--gradient-accent) 1;
+  }
 }

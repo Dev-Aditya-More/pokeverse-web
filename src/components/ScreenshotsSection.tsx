@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import screenshot1 from "@/assets/1.png";
 import screenshot2 from "@/assets/2.png";
 import screenshot3 from "@/assets/3.png";
@@ -11,43 +12,51 @@ const screenshots = [
   {
     src: screenshot1,
     alt: "Dexverse app main interface showing Pokémon grid with search and filter options",
-    title: "Discover & Browse"
+    title: "Discover & Browse",
+    tag: "Home",
   },
   {
     src: screenshot2,
     alt: "Dexverse Pokémon detail view with artwork, abilities, and type effectiveness",
-    title: "In-Depth Details"
+    title: "In-Depth Details",
+    tag: "Detail View",
   },
   {
     src: screenshot3,
     alt: "Dexverse detailed Pokémon team screen displaying stats, abilities, and moves",
-    title: "Build unlimited teams"
+    title: "Build Unlimited Teams",
+    tag: "Team Builder",
   },
   {
     src: screenshot4,
     alt: "Team analysis screen with charts and type coverage",
-    title: "Team Analysis"
+    title: "Team Analysis",
+    tag: "Analytics",
   },
   {
     src: screenshot8,
     alt: "Choose your comfort theme screen with light and dark mode options",
-    title: "Choose your comfort theme"
+    title: "Choose Your Theme",
+    tag: "Themes",
   },
   {
     src: screenshot5,
     alt: "Relax and Play Mini Games",
-    title: "Mini Games"
+    title: "Mini Games",
+    tag: "Play",
   },
   {
     src: screenshot7,
     alt: "Legendaries from every region",
-    title: "Dexverse Legends"
+    title: "Dexverse Legends",
+    tag: "Legendaries",
   },
   {
     src: screenshot6,
     alt: "Customise with Particle Effects",
-    title: "Settings Info"
-  }
+    title: "Particle Effects",
+    tag: "Customise",
+  },
 ];
 
 const ScreenshotsSection = () => {
@@ -55,36 +64,47 @@ const ScreenshotsSection = () => {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full text-xs font-semibold tracking-widest text-accent uppercase mb-6">
+            ✦ App Preview
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            See it in action
+            Built for beauty. Built for speed.
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Experience the clean, intuitive interface that makes exploring the Pokémon world a joy.
+            Every screen crafted with care — so exploring the Pokémon world feels as good as it looks.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {screenshots.map((screenshot, index) => (
-            <div 
+            <motion.div
               key={screenshot.title}
-              className="group relative overflow-hidden rounded-2xl shadow-large bg-card animate-scale-in"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.5, ease: "easeOut" }}
+              className="group relative overflow-hidden rounded-2xl shadow-large bg-card hover:-translate-y-1 transition-transform duration-300"
             >
               <div className="aspect-[3/4] overflow-hidden flex items-center justify-center bg-card">
-                <img 
-                  src={screenshot.src} 
+                <img
+                  src={screenshot.src}
                   alt={screenshot.alt}
-                  className="w-full h-full object-contain transition-smooth group-hover:scale-105"
+                  className="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-smooth">
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="text-white font-semibold text-lg mb-2">
+
+              {/* Always-visible caption */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/95 via-background/50 to-transparent pt-14 pb-4 px-5">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-white font-semibold text-sm leading-tight">
                     {screenshot.title}
                   </h3>
+                  <span className="text-[10px] font-semibold tracking-wide text-accent/80 bg-accent/10 border border-accent/20 px-2 py-0.5 rounded-full shrink-0 ml-2">
+                    {screenshot.tag}
+                  </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
