@@ -85,12 +85,24 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator — line + label */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-xs text-white/45 tracking-[0.35em] uppercase font-medium">
-          Scroll
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
+        <svg
+          className="w-7 h-7 text-white/70 animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <span className="text-sm text-white/60 tracking-widest mt-1">
+          SCROLL
         </span>
-        <div className="w-px h-10 bg-gradient-to-b from-white/50 to-transparent animate-glow-pulse" />
       </div>
     </section>
   );
