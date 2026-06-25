@@ -1,4 +1,5 @@
 import { Github, Mail, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -38,7 +39,7 @@ const Footer = () => {
               className="text-primary-foreground hover:text-primary hover:bg-primary-foreground/10"
             >
               <a
-                href="https://twitter.com/Pokeverse_App"
+                href="https://x.com/Dexverse_App"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -65,24 +66,24 @@ const Footer = () => {
                 <p>© 2026 Dexverse. Aditya More.</p>
               </div>
               <div className="flex space-x-6 text-sm">
-                <a
-                  href="https://github.com/Dev-Aditya-More/PokeVerse/blob/master/Privacy_Policy.md"
+                <Link
+                  to="/privacy-policy"
                   className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
                 >
                   Privacy Policy
-                </a>
-                <a
-                  href="https://github.com/Dev-Aditya-More/PokeVerse/blob/master/Terms_of_service.md"
+                </Link>
+                <Link
+                  to="/terms-of-service"
                   className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
                 >
                   Terms of Service
-                </a>
-                <a
-                  href="mailto:aditya1875more@gmail.com"
+                </Link>
+                <Link
+                  to="/contact"
                   className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
                 >
                   Contact
-                </a>
+                </Link>
               </div>
             </div>
           </div>
