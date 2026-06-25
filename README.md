@@ -1,18 +1,10 @@
 # Dexverse
 Minimal Pokemon companion app written in kotlin
-it is focused on speed responsiveness and stability
+it is focused on speed responsiveness and stability  
 ## Features
 - easy UI/UX to navigate
 - cross-platform(supports android and web)
-- fast search to any pokemon data(stats,abilities,movesets etc)
-## Demo
-""" insert pics here(would be cool if any vid demo too) """
-
-## Roadmaps
-we aim to add:
-- Pokémon search & filters
-- Offline caching
-- Battle type effectiveness view
+- fast search to any pokemon data(stats,abilities,movesets etc)  
 ## Contributing
 Our project is currently in testing,we are open for contributions only if:
 - Code is clean
