@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "Does Dexverse work offline?",
     answer:
-      "Yes. Once the app is installed you can browse Pokémon data without an internet connection. The full Pokédex is available offline, making it perfect for when you're on the go or playing handheld.",
+      "Offline mode isn't available yet. It's on our roadmap, and we're planning to bring full offline Pokédex access in a future update.",
   },
   {
     question: "Can I save my favorite Pokémon?",
