@@ -123,10 +123,100 @@
       ]
     }
     </script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Dexverse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dexverse is a free Pokédex app for Android that lets you search and explore all 1000+ Pokémon. You can look up stats, evolution chains, move sets, abilities, and type matchups — all in one fast app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many Pokémon does Dexverse include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dexverse includes all 1000+ Pokémon across every generation — Gen 1 (Kanto) through Gen 9 (Paldea) — including regional forms, Mega Evolutions, Gigantamax forms, and Paradox Pokémon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Dexverse free to download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — Dexverse is completely free on Google Play. No in-app purchases, no subscriptions, no sign-up required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I search Pokémon by type, ability, or generation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Dexverse has smart search and advanced filters — search by name, type (Fire, Water, Psychic, Dragon, etc.), ability, generation, or base stat range. Combine multiple filters at once."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Dexverse work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The full Pokédex is available offline after installing. No internet connection required to browse Pokémon data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Pokémon generations are in Dexverse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All generations: Kanto (Gen 1), Johto (Gen 2), Hoenn (Gen 3), Sinnoh (Gen 4), Unova (Gen 5), Kalos (Gen 6), Alola (Gen 7), Galar (Gen 8), and Paldea (Gen 9), plus all regional variants and special forms."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
+    <!-- Noscript fallback for search engine crawlers -->
+    <noscript>
+      <main style="font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #1a1a1a;">
+        <h1>Dexverse — Free Pokédex App for Android</h1>
+        <p>Dexverse is the ultimate free Pokédex app for Android. Search all 1000+ Pokémon by name, type, ability, or generation. Browse complete stats, evolution chains, move sets, and type matchups. Download free on Google Play — no sign-up required.</p>
+
+        <h2>Features</h2>
+        <ul>
+          <li><strong>Complete Pokédex</strong> — All 1000+ Pokémon across every generation (Gen 1–9)</li>
+          <li><strong>Smart Search</strong> — Find Pokémon by name, type, ability, or generation instantly</li>
+          <li><strong>Advanced Filters</strong> — Filter by type combo, base stats, rarity, and more</li>
+          <li><strong>Evolution Chains</strong> — Full evolution trees with conditions</li>
+          <li><strong>Offline Support</strong> — Full Pokédex available without internet</li>
+          <li><strong>Favorites</strong> — Save your team and favorite Pokémon</li>
+          <li><strong>Free</strong> — No ads, no in-app purchases, no subscriptions</li>
+        </ul>
+
+        <h2>All Pokémon Generations</h2>
+        <p>Kanto (Generation 1) · Johto (Generation 2) · Hoenn (Generation 3) · Sinnoh (Generation 4) · Unova (Generation 5) · Kalos (Generation 6) · Alola (Generation 7) · Galar (Generation 8) · Paldea (Generation 9) · Regional Variants · Mega Evolutions · Gigantamax Forms · Paradox Pokémon</p>
+
+        <h2>Download Dexverse</h2>
+        <p><a href="https://play.google.com/store/apps/details?id=com.aditya1875.pokeverse.play">Get Dexverse free on Google Play</a> — 8,000+ downloads, rated 4.8/5 stars.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <h3>Is Dexverse free?</h3>
+        <p>Yes — completely free. No in-app purchases, no subscription, no sign-up needed.</p>
+        <h3>Does Dexverse work offline?</h3>
+        <p>Yes. Once installed, the full Pokédex works without an internet connection.</p>
+        <h3>What Pokémon types are in Dexverse?</h3>
+        <p>All 18 types: Normal, Fire, Water, Grass, Electric, Ice, Fighting, Poison, Ground, Flying, Psychic, Bug, Rock, Ghost, Dragon, Dark, Steel, and Fairy.</p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
