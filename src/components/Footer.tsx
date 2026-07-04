@@ -60,6 +60,21 @@ const Footer = () => {
             </Button>
           </div>
 
+          <div className="flex justify-center mb-8">
+            <a
+              href="https://www.producthunt.com/products/dexverse?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-dexverse"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1187111&theme=light"
+                alt="Dexverse - Explore legends like never before! | Product Hunt"
+                width="250"
+                height="54"
+              />
+            </a>
+          </div>
+
           <div className="border-t border-primary-foreground/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-primary-foreground/60 text-sm">
