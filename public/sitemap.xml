@@ -16,6 +16,20 @@
   </url>
 
   <url>
+    <loc>https://dexverse.in/who-is-that-pokemon</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dexverse.in/pokemon-type-chart</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://dexverse.in/privacy-policy</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>

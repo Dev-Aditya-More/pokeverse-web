@@ -80,7 +80,19 @@ const Footer = () => {
               <div className="text-primary-foreground/60 text-sm">
                 <p>© 2026 Dexverse. Aditya More.</p>
               </div>
-              <div className="flex space-x-6 text-sm">
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+                <Link
+                  to="/who-is-that-pokemon"
+                  className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+                >
+                  Who's That Pokémon?
+                </Link>
+                <Link
+                  to="/pokemon-type-chart"
+                  className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+                >
+                  Type Chart
+                </Link>
                 <Link
                   to="/privacy-policy"
                   className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
