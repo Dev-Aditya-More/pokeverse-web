@@ -30,6 +30,41 @@
   </url>
 
   <url>
+    <loc>https://dexverse.in/guides</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dexverse.in/guides/pokemon-type-chart-explained</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dexverse.in/guides/pokemon-evolution-explained</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dexverse.in/guides/ivs-vs-evs-explained</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dexverse.in/guides/pokemon-generations-guide</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://dexverse.in/privacy-policy</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>

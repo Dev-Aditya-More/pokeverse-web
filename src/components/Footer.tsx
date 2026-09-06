@@ -94,6 +94,12 @@ const Footer = () => {
                   Type Chart
                 </Link>
                 <Link
+                  to="/guides"
+                  className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+                >
+                  Guides
+                </Link>
+                <Link
                   to="/privacy-policy"
                   className="text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
                 >

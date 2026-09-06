@@ -11,6 +11,8 @@ import TermsOfService from "./pages/TermsOfService";
 import Contact from "./pages/Contact";
 import WhoIsThatPokemon from "./pages/WhoIsThatPokemon";
 import PokemonTypeChart from "./pages/PokemonTypeChart";
+import Guides from "./pages/Guides";
+import GuideDetail from "./pages/GuideDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/who-is-that-pokemon" element={<WhoIsThatPokemon />} />
             <Route path="/pokemon-type-chart" element={<PokemonTypeChart />} />
+            <Route path="/guides" element={<Guides />} />
+            <Route path="/guides/:slug" element={<GuideDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

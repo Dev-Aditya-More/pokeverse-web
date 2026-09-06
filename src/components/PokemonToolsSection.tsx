@@ -80,6 +80,15 @@ const PokemonToolsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <div className="text-center mt-12">
+          <Link
+            to="/guides"
+            className="text-sm font-semibold text-accent hover:underline"
+          >
+            Want to learn the mechanics? Read our free Pokémon guides →
+          </Link>
+        </div>
       </div>
     </section>
   );

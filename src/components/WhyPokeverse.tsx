@@ -137,7 +137,7 @@ const WhyPokeverse = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-0">
               <div className="flex-1">
-                <AnimatedStat value={8} suffix="k+" label="Downloads" delay={0} />
+                <AnimatedStat value={10} suffix="k+" label="Downloads" delay={0} />
               </div>
               <div className="hidden sm:block w-px h-12 bg-white/15" />
               <div className="flex-1">

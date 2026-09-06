@@ -13,7 +13,7 @@ const DownloadSection = () => {
         <div className="max-w-3xl mx-auto">
           {/* Label */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full text-xs font-semibold tracking-widest text-accent uppercase mb-8">
-            ✦ Join 8k+ Trainers
+            ✦ Join 10k+ Trainers
           </div>
 
           {/* Heading */}
