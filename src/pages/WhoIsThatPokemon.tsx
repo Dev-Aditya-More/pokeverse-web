@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePokemon } from "@/hooks/usePokemon";
 import { POKEMON_NAMES } from "@/data/pokemonNames";
+import { Share2 } from "lucide-react";
 
 const BEST_STREAK_KEY = "dexverse-whos-that-pokemon-best-streak";
 
@@ -57,8 +58,12 @@ const WhoIsThatPokemon = () => {
         if (newStreak > bestStreak) {
           setBestStreak(newStreak);
           localStorage.setItem(BEST_STREAK_KEY, String(newStreak));
+          toast.success(`New record — streak of ${newStreak}!`, {
+            action: { label: "Share", onClick: () => handleShare() },
+          });
+        } else {
+          toast.success(`Correct! It's ${round.name}!`);
         }
-        toast.success(`Correct! It's ${round.name}!`);
       } else {
         setStreak(0);
         toast.error(`Nope — that was ${round.name}.`);
@@ -71,6 +76,28 @@ const WhoIsThatPokemon = () => {
     setRound(pickRound());
     setRevealed(false);
   }, []);
+
+  const handleShare = useCallback(async () => {
+    const scoreToShare = Math.max(streak, bestStreak);
+    const shareUrl = "https://dexverse.in/who-is-that-pokemon";
+    const text = `I just hit a streak of ${scoreToShare} on Who's That Pokémon? on Dexverse! Think you can beat it?`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: "Who's That Pokémon? — Dexverse", text, url: shareUrl });
+      } catch {
+        // user cancelled the share sheet — nothing to do
+      }
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(`${text} ${shareUrl}`);
+      toast.success("Score copied to clipboard — go paste it somewhere!");
+    } catch {
+      toast.error("Couldn't copy — try sharing manually.");
+    }
+  }, [streak, bestStreak]);
 
   return (
     <PageLayout>
@@ -92,7 +119,7 @@ const WhoIsThatPokemon = () => {
           </p>
         </div>
 
-        <div className="flex justify-center gap-8 mb-8 text-sm">
+        <div className="flex justify-center items-center gap-8 mb-8 text-sm">
           <div className="text-center">
             <p className="text-2xl font-bold text-primary">{streak}</p>
             <p className="text-muted-foreground uppercase tracking-wide text-xs">Streak</p>
@@ -101,6 +128,17 @@ const WhoIsThatPokemon = () => {
             <p className="text-2xl font-bold text-foreground">{bestStreak}</p>
             <p className="text-muted-foreground uppercase tracking-wide text-xs">Best</p>
           </div>
+          {bestStreak > 0 && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleShare}
+              className="gap-2"
+            >
+              <Share2 className="h-4 w-4" />
+              Share
+            </Button>
+          )}
         </div>
 
         <div className="rounded-xl border border-border bg-card p-8 flex flex-col items-center">
