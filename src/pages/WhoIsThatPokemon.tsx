@@ -8,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { usePokemon } from "@/hooks/usePokemon";
 import { POKEMON_NAMES } from "@/data/pokemonNames";
 import { Share2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const BEST_STREAK_KEY = "dexverse-whos-that-pokemon-best-streak";
 
@@ -99,6 +100,20 @@ const WhoIsThatPokemon = () => {
     }
   }, [streak, bestStreak]);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (!revealed && ["1", "2", "3", "4"].includes(e.key)) {
+        handleGuess(round.choices[Number(e.key) - 1]);
+      } else if (revealed && e.key === "Enter") {
+        e.preventDefault();
+        handleNext();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [revealed, round.choices, handleGuess, handleNext]);
+
   return (
     <PageLayout>
       <Helmet>
@@ -110,78 +125,129 @@ const WhoIsThatPokemon = () => {
         <link rel="canonical" href="https://dexverse.in/who-is-that-pokemon" />
       </Helmet>
 
-      <div className="container mx-auto px-6 py-16 max-w-2xl">
-        <div className="mb-10 text-center">
-          <h1 className="text-4xl font-bold mb-3">Who's That Pokémon?</h1>
-          <p className="text-muted-foreground leading-relaxed">
+      <div className="container mx-auto px-6 py-12 max-w-3xl">
+        <div className="mb-8 text-center">
+          <span className="eyebrow mb-5">✦ Free browser game</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+            Who's That <span className="text-accent-yellow [text-shadow:0_4px_0_hsl(222_75%_35%)]">Pokémon?</span>
+          </h1>
+          <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
             Guess the silhouette and keep your streak alive. Pick from the four names below —
             there's always another Pokémon waiting.
           </p>
         </div>
 
-        <div className="flex justify-center items-center gap-8 mb-8 text-sm">
-          <div className="text-center">
-            <p className="text-2xl font-bold text-primary">{streak}</p>
-            <p className="text-muted-foreground uppercase tracking-wide text-xs">Streak</p>
+        <div className="flex justify-center items-center gap-4 mb-6 text-sm">
+          <div className="glass rounded-2xl px-6 py-3 text-center min-w-[96px]">
+            <motion.p
+              key={streak}
+              initial={{ scale: 1.5, color: "#f7d02c" }}
+              animate={{ scale: 1, color: "#3dd9ff" }}
+              className="font-display text-2xl font-bold"
+            >
+              {streak}
+            </motion.p>
+            <p className="text-muted-foreground uppercase tracking-[0.2em] text-[10px]">Streak</p>
           </div>
-          <div className="text-center">
-            <p className="text-2xl font-bold text-foreground">{bestStreak}</p>
-            <p className="text-muted-foreground uppercase tracking-wide text-xs">Best</p>
+          <div className="glass rounded-2xl px-6 py-3 text-center min-w-[96px]">
+            <p className="font-display text-2xl font-bold text-foreground">{bestStreak}</p>
+            <p className="text-muted-foreground uppercase tracking-[0.2em] text-[10px]">Best</p>
           </div>
           {bestStreak > 0 && (
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleShare}
-              className="gap-2"
-            >
+            <Button variant="outline" size="sm" onClick={handleShare} className="gap-2 rounded-full glass">
               <Share2 className="h-4 w-4" />
               Share
             </Button>
           )}
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-8 flex flex-col items-center">
-          {isLoading || !pokemon ? (
-            <Skeleton className="w-56 h-56 rounded-lg" />
-          ) : (
-            <motion.img
-              key={round.id}
-              src={pokemon.artworkUrl}
-              alt={revealed ? round.name : "Mystery Pokémon silhouette"}
-              initial={{ filter: "brightness(0)" }}
-              animate={{ filter: revealed ? "brightness(1)" : "brightness(0)" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="w-56 h-56 object-contain"
-            />
-          )}
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 p-6 sm:p-10 flex flex-col items-center shadow-large bg-[hsl(222_75%_30%)]">
+          {/* Classic TV-show sunburst */}
+          <div
+            aria-hidden="true"
+            className="absolute left-1/2 top-[38%] h-[1200px] w-[1200px] -translate-x-1/2 -translate-y-1/2 animate-spin-slow bg-[repeating-conic-gradient(from_0deg,hsl(45_96%_62%/0.35)_0deg_9deg,transparent_9deg_18deg)]"
+          />
+          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,transparent_10%,hsl(222_75%_22%/0.9)_70%)]" />
 
-          <div className="grid grid-cols-2 gap-3 mt-8 w-full max-w-md">
-            {round.choices.map((choice) => (
-              <Button
-                key={choice}
-                variant={
-                  revealed
-                    ? choice === round.name
-                      ? "default"
-                      : "outline"
-                    : "outline"
-                }
-                disabled={revealed}
-                onClick={() => handleGuess(choice)}
-                className="h-auto py-3 hover:bg-primary/10 hover:border-primary hover:text-foreground"
-              >
-                {choice}
-              </Button>
-            ))}
+          <div className="relative flex h-60 w-60 sm:h-72 sm:w-72 items-center justify-center">
+            {revealed && (
+              <motion.div
+                key={`flash-${round.id}`}
+                initial={{ opacity: 0.9, scale: 0.4 }}
+                animate={{ opacity: 0, scale: 2 }}
+                transition={{ duration: 0.7 }}
+                className="absolute inset-0 rounded-full bg-white"
+              />
+            )}
+            {isLoading || !pokemon ? (
+              <Skeleton className="w-52 h-52 rounded-full bg-white/10" />
+            ) : (
+              <motion.img
+                key={round.id}
+                src={pokemon.artworkUrl}
+                alt={revealed ? round.name : "Mystery Pokémon silhouette"}
+                initial={{ filter: "brightness(0)", scale: 0.85, opacity: 0 }}
+                animate={{
+                  filter: revealed ? "brightness(1)" : "brightness(0)",
+                  scale: revealed ? 1.05 : 1,
+                  opacity: 1,
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="relative w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
+                draggable={false}
+              />
+            )}
           </div>
 
-          {revealed && (
-            <Button onClick={handleNext} className="mt-6">
-              Next Pokémon
-            </Button>
-          )}
+          <div className="relative h-10 mt-2">
+            {revealed && (
+              <motion.p
+                initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                className="font-display text-2xl sm:text-3xl font-black text-accent-yellow [text-shadow:0_3px_0_hsl(222_75%_25%)]"
+              >
+                It's {round.name}!
+              </motion.p>
+            )}
+          </div>
+
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 w-full max-w-lg">
+            {round.choices.map((choice, i) => {
+              const isAnswer = choice === round.name;
+              return (
+                <button
+                  key={choice}
+                  disabled={revealed}
+                  onClick={() => handleGuess(choice)}
+                  className={cn(
+                    "group flex items-center gap-3 rounded-2xl border px-4 py-3.5 text-left font-semibold transition-all duration-300",
+                    !revealed && "border-white/15 bg-black/25 hover:bg-white/15 hover:border-white/40 hover:-translate-y-0.5",
+                    revealed && isAnswer && "border-green-400/70 bg-green-500/25 text-white",
+                    revealed && !isAnswer && "border-white/5 bg-black/20 opacity-50"
+                  )}
+                >
+                  <kbd className="hidden sm:inline-flex h-6 w-6 items-center justify-center rounded-md bg-white/10 font-mono text-xs text-white/60">
+                    {i + 1}
+                  </kbd>
+                  {choice}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="relative h-14 mt-6 flex items-center">
+            {revealed && (
+              <Button onClick={handleNext} size="lg" className="rounded-full bg-white text-background hover:bg-white/90 font-bold">
+                Next Pokémon <span className="ml-2 hidden sm:inline text-xs opacity-60">Enter ↵</span>
+              </Button>
+            )}
+          </div>
         </div>
+
+        <p className="mt-6 text-center text-xs text-muted-foreground hidden sm:block">
+          Tip: press <kbd className="font-mono">1</kbd>–<kbd className="font-mono">4</kbd> to guess and{" "}
+          <kbd className="font-mono">Enter</kbd> for the next Pokémon.
+        </p>
       </div>
     </PageLayout>
   );

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Github, Mail, Twitter, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/PageLayout";
@@ -48,6 +49,11 @@ const faqs = [
 const Contact = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>Contact Dexverse — Feedback, Bugs & Feature Requests</title>
+        <meta name="description" content="Get in touch with the Dexverse team for feedback, bug reports, or feature requests for the free Pokédex app." />
+        <link rel="canonical" href="https://dexverse.in/contact" />
+      </Helmet>
       <div className="container mx-auto px-6 py-16 max-w-3xl">
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-3">Contact</h1>
@@ -67,7 +73,7 @@ const Contact = () => {
                 href={href}
                 target={href.startsWith("mailto") ? undefined : "_blank"}
                 rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                className="flex items-start gap-4 p-5 rounded-xl border border-border bg-card hover:bg-muted/50 transition-colors group"
+                className="flex items-start gap-4 p-5 glass rounded-2xl hover:bg-muted/50 transition-colors group"
               >
                 <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                   <Icon className="h-5 w-5" />
@@ -83,7 +89,7 @@ const Contact = () => {
         </section>
 
         {/* GitHub issues CTA */}
-        <section className="mb-14 rounded-xl border border-border bg-card p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <section className="mb-14 glass rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
             <MessageCircle className="h-6 w-6" />
           </div>

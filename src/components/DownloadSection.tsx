@@ -1,67 +1,56 @@
-import { Button } from "@/components/ui/button";
-import { Download, Check } from "lucide-react";
+import { motion } from "framer-motion";
+import { Check, Download } from "lucide-react";
+import Pokeball from "@/components/immersive/Pokeball";
+import { PLAY_STORE_URL } from "@/lib/links";
 
-const perks = [
-  "Free to download, forever",
-  "Regular updates with new features",
-];
+const perks = ["Free to download, forever", "No sign-up required", "Regular updates with new features"];
 
 const DownloadSection = () => {
   return (
-    <section id="download" className="py-24 bg-gradient-to-b from-background to-secondary/40">
-      <div className="container mx-auto px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          {/* Label */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full text-xs font-semibold tracking-widest text-accent uppercase mb-8">
-            ✦ Join 10k+ Trainers
-          </div>
+    <section id="download" className="relative scroll-mt-24 py-28">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 40, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-dex-red/25 via-card to-primary/25 px-6 py-16 text-center shadow-large md:px-16 md:py-20"
+        >
+          {/* Big decorative Pokéball rings */}
+          <Pokeball outline className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 text-white/[0.06] animate-spin-slow" />
+          <Pokeball outline className="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 text-white/[0.05] animate-spin-slower" />
 
-          {/* Heading */}
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Ready to start your journey?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            Carry the complete Pokédex in your pocket — beautifully designed for trainers who care about every detail.
-          </p>
-
-          {/* Main card */}
-          <div className="bg-card rounded-2xl shadow-large p-8 md:p-12 mb-10 border border-border/30 relative overflow-hidden">
-            {/* Inner glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-28 bg-accent/6 blur-3xl rounded-full pointer-events-none" />
-
-            <h3 className="text-2xl font-semibold text-foreground mb-3 relative">
-              Available on Google Play
-            </h3>
-            <p className="text-muted-foreground mb-8 max-w-sm mx-auto relative">
-              Free download. No sign-up required. Start exploring in seconds.
+          <div className="relative">
+            <Pokeball className="mx-auto mb-8 h-20 w-20 animate-pokeball-wobble" />
+            <span className="eyebrow mb-6">✦ Join 10k+ trainers</span>
+            <h2 className="mx-auto mb-6 max-w-2xl text-4xl font-extrabold md:text-6xl">
+              Ready to start your journey?
+            </h2>
+            <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-white/75">
+              Carry the complete Pokédex in your pocket — designed for trainers who care about every
+              detail.
             </p>
 
-            <Button
-              asChild
-              size="xl"
-              className="min-w-[240px] bg-primary text-primary-foreground hover:bg-primary/90 relative group hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-primary/25"
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 rounded-2xl bg-white px-8 py-4 text-lg font-bold text-background shadow-large transition-transform duration-300 hover:scale-105"
             >
-              <a
-                href="https://play.google.com/store/apps/details?id=com.aditya1875.pokeverse.play"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Download className="mr-2 h-5 w-5 group-hover:animate-float" />
-                Get it on Google Play
-              </a>
-            </Button>
-          </div>
+              <Download className="h-5 w-5 transition-transform group-hover:translate-y-0.5" />
+              Get it on Google Play
+            </a>
 
-          {/* Perks list */}
-          <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-8">
-            {perks.map((perk) => (
-              <div key={perk} className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                <Check className="w-4 h-4 text-accent shrink-0" />
-                {perk}
-              </div>
-            ))}
+            <ul className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:gap-8">
+              {perks.map((perk) => (
+                <li key={perk} className="flex items-center justify-center gap-2 text-sm text-white/70">
+                  <Check className="h-4 w-4 shrink-0 text-accent" />
+                  {perk}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

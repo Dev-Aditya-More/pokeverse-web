@@ -1,93 +1,125 @@
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Gamepad2, Swords } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+import { ArrowRight, BookOpen } from "lucide-react";
+import SpotlightCard from "@/components/immersive/SpotlightCard";
+import { TYPE_COLORS, TYPE_LIST } from "@/data/typeChart";
+import { artworkUrl } from "@/lib/sprites";
 
-const tools = [
-  {
-    icon: Gamepad2,
-    title: "Who's That Pokémon?",
-    description:
-      "Guess the silhouette and build your streak. Every one of the 1000+ Pokémon can show up — free, unlimited rounds.",
-    href: "/who-is-that-pokemon",
-    cta: "Play Now",
-  },
-  {
-    icon: Swords,
-    title: "Pokémon Type Chart",
-    description:
-      "Tap any type to instantly see what it's strong against, weak against, resists, and weak to.",
-    href: "/pokemon-type-chart",
-    cta: "View Chart",
-  },
-];
-
-const cardVariants = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.6, ease: "easeOut" },
+    transition: { delay: i * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
+const SilhouettePreview = () => (
+  <div className="relative mb-6 flex h-48 items-center justify-center overflow-hidden rounded-2xl bg-[repeating-conic-gradient(from_0deg,hsl(45_96%_62%/0.18)_0deg_10deg,transparent_10deg_20deg)]">
+    <div className="absolute inset-0 bg-[radial-gradient(circle,transparent_20%,hsl(228_38%_9%)_75%)]" />
+    <img
+      src={artworkUrl(94)}
+      alt=""
+      loading="lazy"
+      className="relative h-40 w-40 object-contain brightness-0 transition-all duration-700 group-hover:scale-110 group-hover:brightness-100"
+    />
+    <span className="absolute bottom-3 right-4 font-display text-4xl font-black text-accent-yellow/90 [text-shadow:0_3px_0_hsl(222_75%_35%)]">
+      ?
+    </span>
+  </div>
+);
+
+const TypeGridPreview = () => (
+  <div className="mb-6 grid h-48 grid-cols-6 gap-1.5 rounded-2xl p-3">
+    {TYPE_LIST.map((t, i) => (
+      <span
+        key={t}
+        className="rounded-lg transition-transform duration-500 group-hover:scale-90"
+        style={{ backgroundColor: TYPE_COLORS[t], transitionDelay: `${i * 20}ms` }}
+      />
+    ))}
+  </div>
+);
+
+const GuidesPreview = () => (
+  <div className="mb-6 flex h-48 flex-col justify-center gap-2.5 rounded-2xl p-4">
+    {["Type chart explained", "Evolution methods", "IVs vs EVs", "Every generation"].map((title, i) => (
+      <div
+        key={title}
+        className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm transition-transform duration-500 group-hover:translate-x-2"
+        style={{ transitionDelay: `${i * 60}ms` }}
+      >
+        <BookOpen className="h-4 w-4 text-accent" />
+        {title}
+      </div>
+    ))}
+  </div>
+);
+
+const tools = [
+  {
+    title: "Who's That Pokémon?",
+    description: "Guess the silhouette, build your streak. All 1,025 Pokémon, unlimited rounds.",
+    href: "/who-is-that-pokemon",
+    cta: "Play now",
+    preview: <SilhouettePreview />,
+    glow: "hsl(45 96% 62% / 0.18)",
+  },
+  {
+    title: "Pokémon Type Chart",
+    description: "The full 18×18 matchup grid plus a dual-type weakness calculator.",
+    href: "/pokemon-type-chart",
+    cta: "Open chart",
+    preview: <TypeGridPreview />,
+    glow: "hsl(190 100% 60% / 0.18)",
+  },
+  {
+    title: "Trainer Guides",
+    description: "Battle mechanics explained clearly — no prior knowledge assumed.",
+    href: "/guides",
+    cta: "Start reading",
+    preview: <GuidesPreview />,
+    glow: "hsl(354 90% 60% / 0.18)",
+  },
+];
+
 const PokemonToolsSection = () => {
   return (
-    <section className="relative py-24 bg-gradient-to-b from-background via-background/95 to-background">
+    <section className="relative py-28">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full text-xs font-semibold tracking-widest text-accent uppercase mb-6">
-            ✦ Free Pokémon Tools
-          </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-6">
-            More ways to play
+        <div className="mb-16 text-center">
+          <span className="eyebrow mb-6">✦ Free in your browser</span>
+          <h2 className="mb-6 text-4xl font-extrabold md:text-5xl">
+            More ways to <span className="text-gradient-fire">play</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            No app required — try these free browser tools built on the same Pokémon data.
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            No install needed — jump straight into these free tools built on the same Pokémon data.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {tools.map((tool, index) => (
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
+          {tools.map((tool, i) => (
             <motion.div
               key={tool.title}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              custom={index}
-              variants={cardVariants}
-              className="h-full"
+              viewport={{ once: true, margin: "-60px" }}
+              custom={i}
+              variants={fadeUp}
             >
-              <Card className="group h-full bg-card/60 backdrop-blur-lg border border-border/40 shadow-lg rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:border-accent/60 hover:-translate-y-2">
-                <CardHeader className="flex flex-col items-center pb-2">
-                  <div className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center bg-gradient-to-tr from-accent to-accent/60 shadow-md group-hover:scale-110 transition-all duration-300 ease-out">
-                    <tool.icon className="h-8 w-8 text-background" />
-                  </div>
-                  <CardTitle className="text-xl font-semibold text-foreground text-center">
-                    {tool.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-center pt-2 flex flex-col items-center gap-5">
-                  <CardDescription className="text-muted-foreground leading-relaxed text-base">
-                    {tool.description}
-                  </CardDescription>
-                  <Button asChild>
-                    <Link to={tool.href}>{tool.cta}</Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              <Link to={tool.href} className="block h-full">
+                <SpotlightCard glow={tool.glow} className="h-full p-5">
+                  {tool.preview}
+                  <h3 className="mb-2 text-xl font-bold">{tool.title}</h3>
+                  <p className="mb-5 leading-relaxed text-muted-foreground">{tool.description}</p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+                    {tool.cta}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </SpotlightCard>
+              </Link>
             </motion.div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link
-            to="/guides"
-            className="text-sm font-semibold text-accent hover:underline"
-          >
-            Want to learn the mechanics? Read our free Pokémon guides →
-          </Link>
         </div>
       </div>
     </section>

@@ -41,6 +41,9 @@ export default {
           foreground: "hsl(var(--accent-foreground))",
           light: "hsl(var(--accent-light))",
         },
+        "dex-red": "hsl(var(--dex-red))",
+        "accent-warm": "hsl(var(--accent-warm))",
+        "accent-yellow": "hsl(var(--accent-yellow))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -62,6 +65,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Unbounded', 'Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -122,6 +126,24 @@ export default {
           "0%, 100%": { transform: "scale(1)", opacity: "1" },
           "50%": { transform: "scale(1.4)", opacity: "0.7" },
         },
+        "marquee": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "marquee-reverse": {
+          from: { transform: "translateX(-50%)" },
+          to: { transform: "translateX(0)" },
+        },
+        "spin-slow": {
+          to: { transform: "rotate(360deg)" },
+        },
+        "pokeball-wobble": {
+          "0%, 70%, 100%": { transform: "rotate(0deg)" },
+          "76%": { transform: "rotate(-14deg)" },
+          "82%": { transform: "rotate(12deg)" },
+          "88%": { transform: "rotate(-6deg)" },
+          "94%": { transform: "rotate(3deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -133,6 +155,11 @@ export default {
         "shimmer": "shimmer 4s linear infinite",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         "pulse-dot": "pulse-dot 1.5s ease-in-out infinite",
+        "marquee": "marquee 60s linear infinite",
+        "marquee-reverse": "marquee-reverse 60s linear infinite",
+        "spin-slow": "spin-slow 40s linear infinite",
+        "spin-slower": "spin-slow 90s linear infinite",
+        "pokeball-wobble": "pokeball-wobble 3.2s ease-in-out infinite",
       },
     },
   },

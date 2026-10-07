@@ -1,8 +1,14 @@
+import { Helmet } from "react-helmet-async";
 import PageLayout from "@/components/PageLayout";
 
 const TermsOfService = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>Terms of Service | Dexverse</title>
+        <meta name="description" content="The terms for using the Dexverse Pokédex app and website." />
+        <link rel="canonical" href="https://dexverse.in/terms-of-service" />
+      </Helmet>
       <div className="container mx-auto px-6 py-16 max-w-3xl">
         <div className="mb-10">
           <h1 className="text-4xl font-bold mb-3">Terms of Service</h1>

@@ -1,116 +1,154 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Search, Heart, Database, Smartphone, Filter } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+import { Database, Filter, Heart, Search, Smartphone } from "lucide-react";
+import SpotlightCard from "@/components/immersive/SpotlightCard";
+import { TYPE_COLORS, TYPE_LIST, getContrastTextColor } from "@/data/typeChart";
+import { artworkUrl } from "@/lib/sprites";
 
-const features = [
-  {
-    icon: Database,
-    number: "01",
-    title: "Complete Pokédex",
-    description:
-      "Every generation, every stat, every evolution chain. The most complete Pokémon data — always at your fingertips.",
-  },
-  {
-    icon: Search,
-    number: "02",
-    title: "Smart Search",
-    description:
-      "Find any Pokémon instantly by name, type, generation, or ability. Results so fast it almost feels like cheating.",
-  },
-  {
-    icon: Filter,
-    number: "03",
-    title: "Advanced Filters",
-    description:
-      "Slice through 1000+ Pokémon with precision — narrow by stats, rarity, type combo, or custom tags.",
-  },
-  {
-    icon: Heart,
-    number: "04",
-    title: "Personal Favorites",
-    description:
-      "Curate your own squad. Save the ones you love and access your collection anytime, anywhere.",
-  },
-  {
-    icon: Smartphone,
-    number: "05",
-    title: "Beautiful Interface",
-    description:
-      "Pixel-perfect design built for every screen. Feels native. Looks stunning. Works flawlessly.",
-  },
-];
-
-const cardVariants = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.6, ease: "easeOut" },
+    transition: { delay: i * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
 
+const TypeCloud = () => (
+  <div className="mt-6 flex flex-wrap gap-1.5">
+    {TYPE_LIST.map((t) => (
+      <span
+        key={t}
+        className="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide transition-transform duration-300 hover:scale-110"
+        style={{ backgroundColor: TYPE_COLORS[t], color: getContrastTextColor(TYPE_COLORS[t]) }}
+      >
+        {t}
+      </span>
+    ))}
+  </div>
+);
+
+const SearchMock = () => (
+  <div className="mt-6 flex items-center gap-2 rounded-xl border border-white/10 bg-black/30 px-3 py-2.5 font-mono text-sm">
+    <Search className="h-4 w-4 text-accent" />
+    <span className="text-white/80">garch</span>
+    <span className="h-4 w-0.5 animate-pulse bg-accent" />
+    <span className="ml-auto rounded-md bg-white/10 px-1.5 text-[10px] text-white/50">#445</span>
+  </div>
+);
+
+const FilterMock = () => (
+  <div className="mt-6 space-y-2">
+    {[
+      ["Speed", 82],
+      ["Attack", 64],
+      ["Sp. Def", 40],
+    ].map(([label, pct]) => (
+      <div key={label} className="flex items-center gap-3 text-[11px] text-white/60">
+        <span className="w-14">{label}</span>
+        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
+          <motion.div
+            className="h-full rounded-full bg-gradient-accent"
+            initial={{ width: 0 }}
+            whileInView={{ width: `${pct}%` }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+const FavoritesMock = () => (
+  <div className="mt-6 flex -space-x-3">
+    {[25, 133, 700, 448, 6].map((id) => (
+      <div key={id} className="h-12 w-12 rounded-full border-2 border-background bg-secondary p-1 transition-transform hover:-translate-y-1">
+        <img src={artworkUrl(id)} alt="" loading="lazy" className="h-full w-full object-contain" />
+      </div>
+    ))}
+  </div>
+);
+
+const features = [
+  {
+    icon: Database,
+    title: "Complete Pokédex",
+    description:
+      "Every generation, every stat, every evolution chain — 1,025 Pokémon plus regional forms, Megas and Gigantamax.",
+    visual: <TypeCloud />,
+    className: "lg:col-span-2",
+    glow: "hsl(190 100% 60% / 0.18)",
+  },
+  {
+    icon: Search,
+    title: "Smart Search",
+    description: "Find any Pokémon instantly by name, type, generation or ability.",
+    visual: <SearchMock />,
+    glow: "hsl(45 96% 62% / 0.16)",
+  },
+  {
+    icon: Filter,
+    title: "Advanced Filters",
+    description: "Slice the dex by stats, rarity and type combos.",
+    visual: <FilterMock />,
+    glow: "hsl(262 80% 65% / 0.18)",
+  },
+  {
+    icon: Heart,
+    title: "Favourites & Teams",
+    description: "Curate your squad and analyse its type coverage.",
+    visual: <FavoritesMock />,
+    glow: "hsl(354 90% 60% / 0.18)",
+  },
+  {
+    icon: Smartphone,
+    title: "Made to feel good",
+    description: "Themes, particle effects and smooth motion on every screen.",
+    visual: (
+      <div className="mt-6 flex gap-2">
+        {["#ff5a68", "#3dd9ff", "#f7d02c", "#7ac74c"].map((c) => (
+          <span key={c} className="h-8 w-8 rounded-full ring-2 ring-white/10" style={{ background: c, boxShadow: `0 0 18px ${c}88` }} />
+        ))}
+      </div>
+    ),
+    glow: "hsl(18 100% 60% / 0.18)",
+  },
+];
+
 const FeaturesSection = () => {
   return (
-    <section id="features" className="relative py-28 bg-gradient-to-b from-background via-background/95 to-background">
+    <section id="features" className="relative scroll-mt-24 py-28">
       <div className="container mx-auto px-6">
-        {/* Section Heading */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/10 border border-accent/30 rounded-full text-xs font-semibold tracking-widest text-accent uppercase mb-6">
-            ✦ Built for Trainers
-          </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-6">
-            Your ultimate Pokémon arsenal
+        <div className="mb-16 text-center">
+          <span className="eyebrow mb-6">✦ Built for trainers</span>
+          <h2 className="mx-auto mb-6 max-w-3xl text-4xl font-extrabold md:text-5xl">
+            Your ultimate <span className="text-gradient-accent">Pokémon arsenal</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Dexverse blends powerful tools with stunning design — so your focus stays on the Pokémon, not the app.
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            Powerful tools wrapped in a design that gets out of the way — so your focus stays on the
+            Pokémon.
           </p>
         </div>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {features.map((f, i) => (
             <motion.div
-              key={feature.title}
+              key={f.title}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              custom={index}
-              variants={cardVariants}
-              className="h-full"
+              viewport={{ once: true, margin: "-60px" }}
+              custom={i}
+              variants={fadeUp}
+              className={f.className}
             >
-              <Card className="group relative bg-card/60 backdrop-blur-lg border border-border/40 shadow-lg rounded-2xl p-6
-                               transition-all duration-300 hover:shadow-2xl hover:border-accent/60 hover:-translate-y-2
-                               hover:shadow-accent/10 h-full overflow-hidden">
-                <CardHeader className="flex flex-col items-center pb-2">
-                  {/* Card number */}
-                  <span className="text-xs font-bold tracking-widest text-accent/50 mb-3 self-start font-mono">
-                    {feature.number}
-                  </span>
-
-                  {/* Icon */}
-                  <div
-                    className="w-16 h-16 mb-5 rounded-2xl flex items-center justify-center
-                                bg-gradient-to-tr from-accent to-accent/60 shadow-md
-                                group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-accent/30
-                                transition-all duration-300 ease-out"
-                  >
-                    <feature.icon className="h-8 w-8 text-background" />
-                  </div>
-
-                  <CardTitle className="text-xl font-semibold text-foreground text-center">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-
-                <CardContent className="text-center pt-2">
-                  <CardDescription className="text-muted-foreground leading-relaxed text-base">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-
-                {/* Hover accent line */}
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-accent rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Card>
+              <SpotlightCard glow={f.glow} className="h-full p-7">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+                  <f.icon className="h-6 w-6 text-accent" />
+                </div>
+                <h3 className="mb-2 text-xl font-bold">{f.title}</h3>
+                <p className="leading-relaxed text-muted-foreground">{f.description}</p>
+                {f.visual}
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

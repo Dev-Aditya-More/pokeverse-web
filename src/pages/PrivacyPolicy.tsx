@@ -1,8 +1,14 @@
+import { Helmet } from "react-helmet-async";
 import PageLayout from "@/components/PageLayout";
 
 const PrivacyPolicy = () => {
   return (
     <PageLayout>
+      <Helmet>
+        <title>Privacy Policy | Dexverse</title>
+        <meta name="description" content="How the Dexverse Pokédex app and website handle your data." />
+        <link rel="canonical" href="https://dexverse.in/privacy-policy" />
+      </Helmet>
       <div className="container mx-auto px-6 py-16 max-w-3xl">
         <div className="mb-10">
           <h1 className="text-4xl font-bold mb-3">Privacy Policy</h1>

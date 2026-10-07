@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { BookOpen } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { GUIDES } from "@/data/guides";
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -53,7 +53,7 @@ const Guides = () => {
               className="h-full"
             >
               <Link to={`/guides/${guide.slug}`} className="block h-full">
-                <Card className="group h-full bg-card/60 backdrop-blur-lg border border-border/40 shadow-lg rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:border-accent/60 hover:-translate-y-2">
+                <Card className="group h-full glass shadow-lg rounded-3xl p-6 transition-all duration-300 hover:shadow-2xl hover:border-accent/60 hover:-translate-y-2">
                   <CardHeader className="pb-2">
                     <div className="w-12 h-12 mb-4 rounded-xl flex items-center justify-center bg-gradient-to-tr from-accent to-accent/60 shadow-md group-hover:scale-110 transition-all duration-300 ease-out">
                       <BookOpen className="h-6 w-6 text-background" />

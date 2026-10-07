@@ -1,4 +1,6 @@
+import SiteHeader from "@/components/SiteHeader";
 import HeroSection from "@/components/HeroSection";
+import PokemonMarquee from "@/components/PokemonMarquee";
 import FeaturesSection from "@/components/FeaturesSection";
 import ScreenshotsSection from "@/components/ScreenshotsSection";
 import WhyPokeverse from "@/components/WhyPokeverse";
@@ -10,13 +12,17 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <HeroSection />
-      <FeaturesSection />
-      <ScreenshotsSection />
-      <WhyPokeverse />
-      <PokemonToolsSection />
-      <DownloadSection />
-      <FaqSection />
+      <SiteHeader />
+      <main>
+        <HeroSection />
+        <PokemonMarquee />
+        <FeaturesSection />
+        <ScreenshotsSection />
+        <WhyPokeverse />
+        <PokemonToolsSection />
+        <DownloadSection />
+        <FaqSection />
+      </main>
       <Footer />
     </div>
   );

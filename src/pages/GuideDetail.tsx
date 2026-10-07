@@ -87,7 +87,7 @@ const GuideDetail = () => {
                 <Link
                   key={r.slug}
                   to={`/guides/${r.slug}`}
-                  className="block rounded-xl border border-border bg-card p-5 hover:border-accent/60 hover:shadow-md transition-all"
+                  className="block glass rounded-2xl p-5 hover:border-accent/60 hover:shadow-md transition-all"
                 >
                   <p className="font-semibold mb-1">{r.title}</p>
                   <p className="text-sm text-muted-foreground">{r.readTime}</p>
@@ -97,7 +97,7 @@ const GuideDetail = () => {
           </div>
         )}
 
-        <div className="mt-10 rounded-xl border border-border bg-card p-6 text-center">
+        <div className="mt-10 glass rounded-2xl p-6 text-center">
           <p className="text-muted-foreground mb-4">
             Put what you just read to the test — try Dexverse's free Pokémon tools.
           </p>

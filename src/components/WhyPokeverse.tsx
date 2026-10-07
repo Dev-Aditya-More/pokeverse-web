@@ -47,7 +47,7 @@ function AnimatedStat({
       transition={{ delay, duration: 0.6 }}
       className="text-center"
     >
-      <div className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+      <div className="font-display text-4xl md:text-5xl font-extrabold text-white tracking-tight">
         {count}
         {suffix}
       </div>
@@ -83,7 +83,7 @@ const WhyPokeverse = () => {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Rich layered background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(222,58%,14%)] via-[hsl(222,50%,11%)] to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.07] to-transparent" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-accent opacity-25" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-accent opacity-15" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[420px] rounded-full bg-primary/8 blur-3xl pointer-events-none animate-glow-pulse" />
@@ -91,10 +91,8 @@ const WhyPokeverse = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-xs font-semibold tracking-widest text-white/75 uppercase mb-6">
-              ✦ Why Trainers Love It
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <span className="eyebrow mb-6">✦ Why trainers love it</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white">
               Why choose Dexverse?
             </h2>
             <p className="text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
@@ -113,7 +111,7 @@ const WhyPokeverse = () => {
                 transition={{ delay: index * 0.15, duration: 0.6, ease: "easeOut" }}
                 className="h-full"
               >
-                <Card className="bg-white/[0.07] backdrop-blur-sm border-white/15 text-center h-full hover:bg-white/[0.11] hover:border-white/25 transition-all duration-300 group">
+                <Card className="glass text-center h-full rounded-3xl hover:-translate-y-1 hover:border-white/25 transition-all duration-500 group">
                   <CardContent className="p-8">
                     <div className="mx-auto w-16 h-16 bg-gradient-to-br from-accent/30 to-accent/10 rounded-xl flex items-center justify-center mb-6 border border-accent/20 group-hover:scale-110 transition-transform duration-300">
                       <benefit.icon className="h-8 w-8 text-accent" />
@@ -131,7 +129,7 @@ const WhyPokeverse = () => {
           </div>
 
           {/* Animated stats */}
-          <div className="bg-white/[0.05] backdrop-blur-sm border border-white/10 rounded-2xl px-8 py-10">
+          <div className="glass rounded-3xl px-8 py-10">
             <p className="text-center text-xs text-white/40 uppercase tracking-widest font-semibold mb-8">
               Trusted by trainers worldwide
             </p>
