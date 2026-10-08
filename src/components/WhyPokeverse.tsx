@@ -63,7 +63,7 @@ const benefits = [
     icon: Zap,
     title: "Smooth and Fast",
     description:
-      "Instant results, butter-smooth navigation — because great trainers can't afford to wait.",
+      "Instant results, butter-smooth navigation, because great trainers can't afford to wait.",
   },
   {
     icon: Shield,
@@ -75,7 +75,7 @@ const benefits = [
     icon: Sparkles,
     title: "Delightful to Use",
     description:
-      "An interface so intuitive it disappears — leaving just you, the data, and your Pokémon.",
+      "An interface so intuitive it disappears, leaving just you, the data, and your Pokémon.",
   },
 ];
 
@@ -96,7 +96,7 @@ const WhyPokeverse = () => {
               Why choose Dexverse?
             </h2>
             <p className="text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
-              We've reimagined what a Pokémon companion should be — simple, powerful, and impossible to put down.
+              We've reimagined what a Pokémon companion should be: simple, powerful, and impossible to put down.
             </p>
           </div>
 

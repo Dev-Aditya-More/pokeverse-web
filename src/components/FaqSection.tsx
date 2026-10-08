@@ -9,17 +9,17 @@ const faqs = [
   {
     question: "What is Dexverse?",
     answer:
-      "Dexverse is a free Pokédex app for Android that lets you search and explore all 1000+ Pokémon. You can look up Pokémon stats, base stats, evolution chains, move sets, abilities, and type matchups — all in one fast, beautifully designed app.",
+      "Dexverse is a free Pokédex app for Android that lets you search and explore all 1000+ Pokémon. You can look up Pokémon stats, base stats, evolution chains, move sets, abilities, and type matchups, all in one fast, beautifully designed app.",
   },
   {
     question: "How many Pokémon does Dexverse include?",
     answer:
-      "Dexverse includes all 1000+ Pokémon across every generation — from Generation 1 (Kanto) through the latest Pokémon titles. This includes regional forms, Mega Evolutions, Gigantamax forms, and Paradox Pokémon.",
+      "Dexverse includes all 1000+ Pokémon across every generation, from Generation 1 (Kanto) through the latest Pokémon titles. This includes regional forms, Mega Evolutions, Gigantamax forms, and Paradox Pokémon.",
   },
   {
     question: "Is Dexverse free to download?",
     answer:
-      "Yes — Dexverse is completely free to download on Google Play. There are no in-app purchases, no subscriptions, and no sign-up required. Just install and start exploring.",
+      "Yes. Dexverse is completely free to download on Google Play. There are no in-app purchases, no subscriptions, and no sign-up required. Just install and start exploring.",
   },
   {
     question: "Can I search Pokémon by type, ability, or generation?",
@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "Which Pokémon generations are in Dexverse?",
     answer:
-      "All of them. Dexverse covers every mainline Pokémon generation: Kanto (Gen 1), Johto (Gen 2), Hoenn (Gen 3), Sinnoh (Gen 4), Unova (Gen 5), Kalos (Gen 6), Alola (Gen 7), Galar (Gen 8), and Paldea (Gen 9) — plus all regional variants and special forms.",
+      "All of them. Dexverse covers every mainline Pokémon generation: Kanto (Gen 1), Johto (Gen 2), Hoenn (Gen 3), Sinnoh (Gen 4), Unova (Gen 5), Kalos (Gen 6), Alola (Gen 7), Galar (Gen 8), and Paldea (Gen 9), plus all regional variants and special forms.",
   },
   {
     question: "Is Dexverse available on iPhone or iOS?",

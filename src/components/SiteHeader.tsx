@@ -105,7 +105,7 @@ const SiteHeader = () => {
             className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-gradient-hero px-4 py-3 font-semibold text-white"
           >
             <Download className="h-4 w-4" />
-            Get the app — free
+            Get the app for free
           </a>
         </motion.div>
       )}

@@ -80,7 +80,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="mx-auto mb-8 max-w-xl text-base sm:mb-10 leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-            All 1,025 Pokémon from Kanto to Paldea — stats, evolutions, movesets and type
+            All 1,025 Pokémon from Kanto to Paldea: stats, evolutions, movesets and type
             matchups, plus a team builder and mini games. A free Pokédex app for Android, built
             by a trainer, for trainers.
           </p>

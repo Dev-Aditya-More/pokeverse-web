@@ -128,7 +128,7 @@ const GuideDetail = () => {
 
         <div className="mt-10 glass rounded-2xl p-6 text-center">
           <p className="text-muted-foreground mb-4">
-            Put what you just read to the test — try Dexverse's free Pokémon tools.
+            Put what you just read to the test with Dexverse's free Pokémon tools.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link

@@ -74,7 +74,7 @@ const features = [
     icon: Database,
     title: "Complete Pokédex",
     description:
-      "Every generation, every stat, every evolution chain — 1,025 Pokémon plus regional forms, Megas and Gigantamax.",
+      "Every generation, every stat, every evolution chain. 1,025 Pokémon plus regional forms, Megas and Gigantamax.",
     visual: <TypeCloud />,
     className: "lg:col-span-2",
     glow: "hsl(190 100% 60% / 0.18)",
@@ -125,7 +125,7 @@ const FeaturesSection = () => {
             Your ultimate <span className="text-gradient-accent">Pokémon arsenal</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Powerful tools wrapped in a design that gets out of the way — so your focus stays on the
+            Powerful tools wrapped in a design that gets out of the way, so your focus stays on the
             Pokémon.
           </p>
         </div>

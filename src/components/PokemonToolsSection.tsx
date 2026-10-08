@@ -75,7 +75,7 @@ const tools = [
   },
   {
     title: "Trainer Guides",
-    description: "Battle mechanics explained clearly — no prior knowledge assumed.",
+    description: "Battle mechanics explained clearly. No prior knowledge assumed.",
     href: "/guides",
     cta: "Start reading",
     preview: <GuidesPreview />,
@@ -93,7 +93,7 @@ const PokemonToolsSection = () => {
             More ways to <span className="text-gradient-fire">play</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            No install needed — jump straight into these free tools built on the same Pokémon data.
+            No install needed. Jump straight into these free tools built on the same Pokémon data.
           </p>
         </div>
 

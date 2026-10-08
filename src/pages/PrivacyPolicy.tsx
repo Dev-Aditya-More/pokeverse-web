@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
               <li>
                 <span className="font-medium text-foreground">Usage Data:</span> Anonymous,
                 aggregated analytics such as app crashes, feature usage frequency, and device
-                type — used solely to improve app stability and experience.
+                type, used solely to improve app stability and experience.
               </li>
               <li>
                 <span className="font-medium text-foreground">Favorites & Preferences:</span>{" "}

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 interface PokeballProps {
   className?: string;
-  /** Draw only the outline — used for decorative background rings. */
+  /** Draw only the outline; used for decorative background rings. */
   outline?: boolean;
 }
 

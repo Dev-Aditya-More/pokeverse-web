@@ -39,7 +39,7 @@ const routes = [
     path: "/who-is-that-pokemon",
     title: "Who's That Pokémon? — Free Silhouette Guessing Game | Dexverse",
     description:
-      "Play Who's That Pokémon? for free — guess the silhouette from all 1000+ Pokémon and build your streak. No sign-up, unlimited rounds.",
+      "Play Who's That Pokémon? for free. Guess the silhouette from all 1000+ Pokémon and build your streak. No sign-up, unlimited rounds.",
     lastmod: today,
     changefreq: "weekly",
     priority: "0.8",
@@ -57,7 +57,7 @@ const routes = [
     path: "/guides",
     title: "Pokémon Guides — Types, Evolution, Stats & More | Dexverse",
     description:
-      "Free Pokémon guides covering type matchups, evolution methods, IVs and EVs, and every generation from Kanto to Paldea — written by the Dexverse team.",
+      "Free Pokémon guides covering type matchups, evolution methods, IVs and EVs, and every generation from Kanto to Paldea, written by the Dexverse team.",
     lastmod: guides.map((g) => g.lastmod).sort().at(-1),
     changefreq: "weekly",
     priority: "0.8",

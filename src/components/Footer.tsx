@@ -50,7 +50,7 @@ const Footer = () => {
               <span className="font-display text-xl font-bold">Dexverse</span>
             </Link>
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Built with passion and ❤️ for the Pokémon community — a free Pokédex app for Android.
+              Built with passion and ❤️ for the Pokémon community. A free Pokédex app for Android.
             </p>
             <div className="mb-6 flex flex-wrap items-center gap-2">
               {SOCIALS.map(({ href, label, icon: Icon }) => (

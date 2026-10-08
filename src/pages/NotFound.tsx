@@ -17,7 +17,7 @@ const NotFound = () => {
         <h1 className="mb-4 text-5xl font-extrabold">404</h1>
         <p className="mb-2 text-xl">A wild empty page appeared!</p>
         <p className="mb-8 text-muted-foreground">
-          Nothing lives at <code className="font-mono text-accent">{location.pathname}</code> — it may have fled.
+          Nothing lives at <code className="font-mono text-accent">{location.pathname}</code>. It may have fled.
         </p>
         <Link
           to="/"

@@ -93,7 +93,7 @@ const Heading = () => (
       Built for beauty. <span className="text-gradient-fire">Built for speed.</span>
     </h2>
     <p className="text-lg leading-relaxed text-muted-foreground">
-      Every screen crafted with care — so exploring the Pokémon world feels as good as it looks.
+      Every screen crafted with care, so exploring the Pokémon world feels as good as it looks.
     </p>
     <p className="mt-6 hidden text-xs font-semibold uppercase tracking-[0.3em] text-white/40 lg:block">
       Keep scrolling →

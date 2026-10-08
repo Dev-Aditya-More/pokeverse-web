@@ -59,7 +59,7 @@ const WhoIsThatPokemon = () => {
         if (newStreak > bestStreak) {
           setBestStreak(newStreak);
           localStorage.setItem(BEST_STREAK_KEY, String(newStreak));
-          toast.success(`New record — streak of ${newStreak}!`, {
+          toast.success(`New record: streak of ${newStreak}!`, {
             action: { label: "Share", onClick: () => handleShare() },
           });
         } else {
@@ -67,7 +67,7 @@ const WhoIsThatPokemon = () => {
         }
       } else {
         setStreak(0);
-        toast.error(`Nope — that was ${round.name}.`);
+        toast.error(`Nope, that was ${round.name}.`);
       }
     },
     [revealed, round.name, streak, bestStreak]
@@ -85,18 +85,18 @@ const WhoIsThatPokemon = () => {
 
     if (navigator.share) {
       try {
-        await navigator.share({ title: "Who's That Pokémon? — Dexverse", text, url: shareUrl });
+        await navigator.share({ title: "Who's That Pokémon? | Dexverse", text, url: shareUrl });
       } catch {
-        // user cancelled the share sheet — nothing to do
+        // user cancelled the share sheet, nothing to do
       }
       return;
     }
 
     try {
       await navigator.clipboard.writeText(`${text} ${shareUrl}`);
-      toast.success("Score copied to clipboard — go paste it somewhere!");
+      toast.success("Score copied to clipboard. Go paste it somewhere!");
     } catch {
-      toast.error("Couldn't copy — try sharing manually.");
+      toast.error("Couldn't copy. Try sharing manually.");
     }
   }, [streak, bestStreak]);
 
@@ -120,7 +120,7 @@ const WhoIsThatPokemon = () => {
         <title>Who's That Pokémon? — Free Silhouette Guessing Game | Dexverse</title>
         <meta
           name="description"
-          content="Play Who's That Pokémon? for free — guess the silhouette from all 1000+ Pokémon and build your streak. No sign-up, unlimited rounds."
+          content="Play Who's That Pokémon? for free. Guess the silhouette from all 1000+ Pokémon and build your streak. No sign-up, unlimited rounds."
         />
         <link rel="canonical" href="https://dexverse.in/who-is-that-pokemon" />
       </Helmet>
@@ -134,7 +134,7 @@ const WhoIsThatPokemon = () => {
             Who's That <span className="text-accent-yellow [text-shadow:0_4px_0_hsl(222_75%_35%)]">Pokémon?</span>
           </h1>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            Guess the silhouette and keep your streak alive. Pick from the four names below —
+            Guess the silhouette and keep your streak alive. Pick from the four names below;
             there's always another Pokémon waiting.
           </p>
         </div>

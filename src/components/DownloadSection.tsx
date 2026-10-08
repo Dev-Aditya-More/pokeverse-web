@@ -27,7 +27,7 @@ const DownloadSection = () => {
               Ready to start your journey?
             </h2>
             <p className="mx-auto mb-8 max-w-xl text-base leading-relaxed text-white/75 sm:mb-10 sm:text-lg">
-              Carry the complete Pokédex in your pocket — designed for trainers who care about every
+              Carry the complete Pokédex in your pocket, designed for trainers who care about every
               detail.
             </p>
 

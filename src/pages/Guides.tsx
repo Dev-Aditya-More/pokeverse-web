@@ -22,7 +22,7 @@ const Guides = () => {
         <title>Pokémon Guides — Types, Evolution, Stats & More | Dexverse</title>
         <meta
           name="description"
-          content="Free Pokémon guides covering type matchups, evolution methods, IVs and EVs, and every generation from Kanto to Paldea — written by the Dexverse team."
+          content="Free Pokémon guides covering type matchups, evolution methods, IVs and EVs, and every generation from Kanto to Paldea, written by the Dexverse team."
         />
         <link rel="canonical" href="https://dexverse.in/guides" />
       </Helmet>
@@ -36,7 +36,7 @@ const Guides = () => {
             Learn the mechanics behind every battle
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Type matchups, evolution methods, stat mechanics, and the full generation timeline —
+            Type matchups, evolution methods, stat mechanics, and the full generation timeline,
             explained clearly, with no prior knowledge assumed.
           </p>
         </div>

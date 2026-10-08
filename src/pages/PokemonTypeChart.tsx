@@ -133,11 +133,11 @@ const DualTypeCalculator = () => {
   }, [types]);
 
   const rows: [number, string][] = [
-    [4, "4× — double weakness"],
-    [2, "2× — weak to"],
-    [0.5, "½× — resists"],
-    [0.25, "¼× — double resist"],
-    [0, "0× — immune"],
+    [4, "4×: double weakness"],
+    [2, "2×: weak to"],
+    [0.5, "½×: resists"],
+    [0.25, "¼×: double resist"],
+    [0, "0×: immune"],
   ];
 
   return (
@@ -147,7 +147,7 @@ const DualTypeCalculator = () => {
       </h2>
       <p className="text-muted-foreground mb-6">
         Pick up to two types to see exactly what a Pokémon with that typing is weak to, resists, and is
-        immune to — multipliers stack, so a double weakness takes 4× damage.
+        immune to. Multipliers stack, so a double weakness takes 4× damage.
       </p>
       <div className="flex flex-wrap gap-2 mb-8">
         {TYPE_LIST.map((t) => (
@@ -158,7 +158,7 @@ const DualTypeCalculator = () => {
       <div className="glass rounded-3xl p-5 sm:p-8 space-y-5">
         <div className="flex flex-wrap items-center gap-2 pb-5 border-b border-white/10">
           <span className="text-sm text-muted-foreground mr-1">Defending as</span>
-          {types.length ? types.map((t) => <TypePill key={t} type={t} />) : <span className="text-sm">— pick a type —</span>}
+          {types.length ? types.map((t) => <TypePill key={t} type={t} />) : <span className="text-sm">Pick a type</span>}
         </div>
         {rows.map(([mult, label]) => {
           const list = groups.get(mult);
@@ -290,7 +290,7 @@ const PokemonTypeChart = () => {
           <span className="eyebrow mb-5">✦ Gen 6 – Gen 9</span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Pokémon Type Chart</h1>
           <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Tap a type to see its full matchup — what it hits hard, what shrugs it off, and what to
+            Tap a type to see its full matchup: what it hits hard, what shrugs it off, and what to
             watch out for. Want the theory? Read{" "}
             <Link to="/guides/pokemon-type-chart-explained" className="text-accent hover:underline">
               the type chart explained

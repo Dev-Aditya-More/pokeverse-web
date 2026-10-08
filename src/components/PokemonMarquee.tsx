@@ -12,7 +12,7 @@ const PokemonMarquee = () => {
   return (
     <section aria-label="Pokémon from every generation" className="relative py-10">
       <p className="mb-6 px-6 text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:text-[11px] sm:tracking-[0.3em]">
-        From Bulbasaur to Pecharunt — every generation
+        From Bulbasaur to Pecharunt, every generation
       </p>
       <div className="mask-fade-x space-y-4 overflow-hidden">
         {ROWS.map((row, r) => (

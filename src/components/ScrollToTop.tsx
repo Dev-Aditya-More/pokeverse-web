@@ -10,7 +10,7 @@ const ScrollToTop = () => {
       return;
     }
     // Links like "/#features" should land on the section. Pages load lazily, so the
-    // target may not exist yet — keep looking for up to ~2s before giving up.
+    // target may not exist yet, so keep looking for up to ~2s before giving up.
     let frame = 0;
     let tries = 0;
     const find = () => {
