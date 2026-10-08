@@ -125,32 +125,34 @@ const WhoIsThatPokemon = () => {
         <link rel="canonical" href="https://dexverse.in/who-is-that-pokemon" />
       </Helmet>
 
-      <div className="container mx-auto px-6 py-12 max-w-3xl">
-        <div className="mb-8 text-center">
-          <span className="eyebrow mb-5">✦ Free browser game</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-12 max-w-3xl">
+        <div className="mb-5 sm:mb-8 text-center">
+          <div className="hidden sm:block">
+            <span className="eyebrow mb-4">✦ Free browser game</span>
+          </div>
+          <h1 className="text-[1.7rem] sm:text-4xl md:text-5xl font-extrabold mb-2 sm:mb-4">
             Who's That <span className="text-accent-yellow [text-shadow:0_4px_0_hsl(222_75%_35%)]">Pokémon?</span>
           </h1>
-          <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
             Guess the silhouette and keep your streak alive. Pick from the four names below —
             there's always another Pokémon waiting.
           </p>
         </div>
 
-        <div className="flex justify-center items-center gap-4 mb-6 text-sm">
-          <div className="glass rounded-2xl px-6 py-3 text-center min-w-[96px]">
+        <div className="flex justify-center items-center gap-3 sm:gap-4 mb-4 sm:mb-6 text-sm">
+          <div className="glass rounded-2xl px-4 py-2 sm:px-6 sm:py-3 text-center min-w-[80px] sm:min-w-[96px]">
             <motion.p
               key={streak}
               initial={{ scale: 1.5, color: "#f7d02c" }}
               animate={{ scale: 1, color: "#3dd9ff" }}
-              className="font-display text-2xl font-bold"
+              className="font-display text-xl sm:text-2xl font-bold"
             >
               {streak}
             </motion.p>
             <p className="text-muted-foreground uppercase tracking-[0.2em] text-[10px]">Streak</p>
           </div>
-          <div className="glass rounded-2xl px-6 py-3 text-center min-w-[96px]">
-            <p className="font-display text-2xl font-bold text-foreground">{bestStreak}</p>
+          <div className="glass rounded-2xl px-4 py-2 sm:px-6 sm:py-3 text-center min-w-[80px] sm:min-w-[96px]">
+            <p className="font-display text-xl sm:text-2xl font-bold text-foreground">{bestStreak}</p>
             <p className="text-muted-foreground uppercase tracking-[0.2em] text-[10px]">Best</p>
           </div>
           {bestStreak > 0 && (
@@ -161,7 +163,7 @@ const WhoIsThatPokemon = () => {
           )}
         </div>
 
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 p-6 sm:p-10 flex flex-col items-center shadow-large bg-[hsl(222_75%_30%)]">
+        <div className="relative overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] border border-white/10 p-4 sm:p-10 flex flex-col items-center shadow-large bg-[hsl(222_75%_30%)]">
           {/* Classic TV-show sunburst */}
           <div
             aria-hidden="true"
@@ -169,7 +171,7 @@ const WhoIsThatPokemon = () => {
           />
           <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,transparent_10%,hsl(222_75%_22%/0.9)_70%)]" />
 
-          <div className="relative flex h-60 w-60 sm:h-72 sm:w-72 items-center justify-center">
+          <div className="relative flex h-44 w-44 min-[400px]:h-52 min-[400px]:w-52 sm:h-72 sm:w-72 items-center justify-center">
             {revealed && (
               <motion.div
                 key={`flash-${round.id}`}
@@ -180,7 +182,7 @@ const WhoIsThatPokemon = () => {
               />
             )}
             {isLoading || !pokemon ? (
-              <Skeleton className="w-52 h-52 rounded-full bg-white/10" />
+              <Skeleton className="w-3/4 h-3/4 rounded-full bg-white/10" />
             ) : (
               <motion.img
                 key={round.id}
@@ -199,19 +201,19 @@ const WhoIsThatPokemon = () => {
             )}
           </div>
 
-          <div className="relative h-10 mt-2">
+          <div className="relative h-8 sm:h-10 mt-1 sm:mt-2">
             {revealed && (
               <motion.p
                 initial={{ opacity: 0, y: 10, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                className="font-display text-2xl sm:text-3xl font-black text-accent-yellow [text-shadow:0_3px_0_hsl(222_75%_25%)]"
+                className="font-display text-xl sm:text-3xl font-black text-accent-yellow [text-shadow:0_3px_0_hsl(222_75%_25%)]"
               >
                 It's {round.name}!
               </motion.p>
             )}
           </div>
 
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 w-full max-w-lg">
+          <div className="relative grid grid-cols-2 gap-2 sm:gap-3 mt-3 sm:mt-6 w-full max-w-lg">
             {round.choices.map((choice, i) => {
               const isAnswer = choice === round.name;
               return (
@@ -220,7 +222,7 @@ const WhoIsThatPokemon = () => {
                   disabled={revealed}
                   onClick={() => handleGuess(choice)}
                   className={cn(
-                    "group flex items-center gap-3 rounded-2xl border px-4 py-3.5 text-left font-semibold transition-all duration-300",
+                    "group flex min-h-[48px] items-center justify-center sm:justify-start gap-3 rounded-2xl border px-2 sm:px-4 py-2.5 sm:py-3.5 text-center sm:text-left text-sm sm:text-base font-semibold leading-tight break-words transition-all duration-300",
                     !revealed && "border-white/15 bg-black/25 hover:bg-white/15 hover:border-white/40 hover:-translate-y-0.5",
                     revealed && isAnswer && "border-green-400/70 bg-green-500/25 text-white",
                     revealed && !isAnswer && "border-white/5 bg-black/20 opacity-50"
@@ -235,7 +237,7 @@ const WhoIsThatPokemon = () => {
             })}
           </div>
 
-          <div className="relative h-14 mt-6 flex items-center">
+          <div className="relative h-12 sm:h-14 mt-3 sm:mt-6 flex items-center">
             {revealed && (
               <Button onClick={handleNext} size="lg" className="rounded-full bg-white text-background hover:bg-white/90 font-bold">
                 Next Pokémon <span className="ml-2 hidden sm:inline text-xs opacity-60">Enter ↵</span>

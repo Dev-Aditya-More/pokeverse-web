@@ -66,20 +66,20 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 text-center lg:text-left"
         >
-          <div className="glass mb-8 inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-sm font-medium text-white/90">
+          <div className="glass mb-6 inline-flex items-center gap-2 whitespace-nowrap rounded-full px-3.5 py-2 text-xs font-medium text-white/90 sm:mb-8 sm:gap-2.5 sm:px-4 sm:text-sm">
             <span className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.9)] animate-pulse-dot" />
             <Star className="h-3.5 w-3.5 fill-accent-yellow text-accent-yellow" />
-            Free on Google Play · 10k+ trainers
+            Free on Google Play<span className="hidden min-[360px]:inline"> · 10k+ trainers</span>
           </div>
 
           <h1 className="mb-6 font-display font-extrabold leading-[0.95]">
-            <span className="block text-6xl sm:text-7xl xl:text-8xl shimmer-text">Dexverse</span>
+            <span className="block text-[clamp(2.6rem,12.5vw,4.5rem)] sm:text-7xl xl:text-8xl shimmer-text">Dexverse</span>
             <span className="mt-4 block text-2xl font-bold text-white/95 sm:text-3xl xl:text-4xl">
               The Pokédex that feels <span className="text-gradient-fire">alive.</span>
             </span>
           </h1>
 
-          <p className="mx-auto mb-10 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
+          <p className="mx-auto mb-8 max-w-xl text-base sm:mb-10 leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
             All 1,025 Pokémon from Kanto to Paldea — stats, evolutions, movesets and type
             matchups, plus a team builder and mini games. A free Pokédex app for Android, built
             by a trainer, for trainers.
@@ -90,21 +90,21 @@ const HeroSection = () => {
               href={PLAY_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex min-w-[230px] items-center justify-center gap-2.5 rounded-2xl bg-gradient-hero px-8 py-4 text-base font-semibold text-white glow-red transition-transform duration-300 hover:scale-105"
+              className="group inline-flex w-full max-w-xs items-center whitespace-nowrap sm:w-auto sm:min-w-[230px] justify-center gap-2.5 rounded-2xl bg-gradient-hero px-8 py-4 text-base font-semibold text-white glow-red transition-transform duration-300 hover:scale-105"
             >
               <Download className="h-5 w-5 transition-transform group-hover:translate-y-0.5" />
               Get it on Google Play
             </a>
             <Link
               to="/who-is-that-pokemon"
-              className="glass inline-flex items-center gap-2.5 rounded-2xl px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-white/10"
+              className="glass inline-flex w-full max-w-xs items-center justify-center gap-2.5 whitespace-nowrap rounded-2xl px-6 py-4 sm:w-auto text-base font-semibold text-white transition-colors hover:bg-white/10"
             >
               <Gamepad2 className="h-5 w-5 text-accent" />
               Play in your browser
             </Link>
           </div>
 
-          <dl className="mt-12 flex justify-center gap-8 sm:gap-12 lg:justify-start">
+          <dl className="mt-10 flex justify-center gap-6 sm:mt-12 sm:gap-12 lg:justify-start">
             {[
               ["1,025", "Pokémon"],
               ["18", "Types"],
@@ -131,7 +131,7 @@ const HeroSection = () => {
           }}
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
-          className="relative mx-auto aspect-square w-full max-w-[540px] [perspective:1200px]"
+          className="relative mx-auto aspect-square w-full max-w-[340px] sm:max-w-[460px] lg:max-w-[540px] [perspective:1200px]"
         >
           <motion.div style={{ rotateX, rotateY }} className="relative h-full w-full [transform-style:preserve-3d]">
             {/* Aura */}

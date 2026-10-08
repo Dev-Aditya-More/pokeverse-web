@@ -11,7 +11,7 @@ const TermsOfService = () => {
       </Helmet>
       <div className="container mx-auto px-6 py-16 max-w-3xl">
         <div className="mb-10">
-          <h1 className="text-4xl font-bold mb-3">Terms of Service</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-3">Terms of Service</h1>
           <p className="text-muted-foreground text-sm">Last updated: June 25, 2026</p>
         </div>
 

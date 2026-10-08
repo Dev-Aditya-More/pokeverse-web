@@ -5,15 +5,21 @@ const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // Links like "/#features" from other pages should land on the section, not the top.
-    if (hash) {
-      const el = document.getElementById(hash.slice(1));
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-        return;
-      }
+    if (!hash) {
+      window.scrollTo(0, 0);
+      return;
     }
-    window.scrollTo(0, 0);
+    // Links like "/#features" should land on the section. Pages load lazily, so the
+    // target may not exist yet — keep looking for up to ~2s before giving up.
+    let frame = 0;
+    let tries = 0;
+    const find = () => {
+      const el = document.getElementById(hash.slice(1));
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      else if (tries++ < 120) frame = requestAnimationFrame(find);
+    };
+    find();
+    return () => cancelAnimationFrame(frame);
   }, [pathname, hash]);
 
   return null;

@@ -91,7 +91,7 @@ const TypeExplorer = () => {
           key={selected}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          className="glass rounded-3xl p-8 grid gap-8 sm:grid-cols-2"
+          className="glass rounded-3xl p-5 sm:p-8 grid gap-6 sm:gap-8 sm:grid-cols-2"
           style={{ boxShadow: `0 0 80px -20px ${TYPE_COLORS[selected]}` }}
         >
           <div className="sm:col-span-2 flex items-center gap-3">
@@ -155,7 +155,7 @@ const DualTypeCalculator = () => {
         ))}
       </div>
 
-      <div className="glass rounded-3xl p-6 sm:p-8 space-y-5">
+      <div className="glass rounded-3xl p-5 sm:p-8 space-y-5">
         <div className="flex flex-wrap items-center gap-2 pb-5 border-b border-white/10">
           <span className="text-sm text-muted-foreground mr-1">Defending as</span>
           {types.length ? types.map((t) => <TypePill key={t} type={t} />) : <span className="text-sm">— pick a type —</span>}
@@ -199,21 +199,22 @@ const FullChart = () => {
         Rows are the attacking move's type, columns are the defending Pokémon's type. Green cells deal
         2× damage, red cells ½×, and black cells 0× (no effect). Blank cells are normal 1× damage.
       </p>
-      <div className="glass rounded-3xl p-3 sm:p-5 overflow-x-auto">
-        <table className="border-separate border-spacing-[3px] text-[11px] mx-auto">
+      <p className="mb-2 text-xs text-muted-foreground sm:hidden">← Swipe the chart sideways →</p>
+      <div className="glass rounded-3xl p-2 sm:p-5 overflow-x-auto overscroll-x-contain">
+        <table className="border-separate border-spacing-[2px] sm:border-spacing-[3px] text-[10px] sm:text-[11px] mx-auto">
           <caption className="sr-only">
             Pokémon type effectiveness chart: attacking type by row, defending type by column
           </caption>
           <thead>
             <tr>
-              <th className="p-1 text-[9px] font-semibold text-muted-foreground text-left">
+              <th className="sticky left-0 z-10 bg-[hsl(228_38%_10%)] p-1 text-[8px] sm:text-[9px] font-semibold text-muted-foreground text-left">
                 ATK ↓ / DEF →
               </th>
               {TYPE_LIST.map((t, col) => (
                 <th key={t} scope="col" className="p-0">
                   <div
                     className={cn(
-                      "h-16 w-7 rounded-md flex items-end justify-center pb-1 transition-opacity",
+                      "h-14 w-6 sm:h-16 sm:w-7 rounded-md flex items-end justify-center pb-1 transition-opacity",
                       hover && hover.col !== col && "opacity-40"
                     )}
                     style={{ backgroundColor: TYPE_COLORS[t] }}
@@ -232,10 +233,10 @@ const FullChart = () => {
           <tbody onMouseLeave={() => setHover(null)}>
             {TYPE_LIST.map((attacker, row) => (
               <tr key={attacker}>
-                <th scope="row" className="p-0">
+                <th scope="row" className="sticky left-0 z-10 p-0 bg-[hsl(228_38%_10%)]">
                   <div
                     className={cn(
-                      "w-[72px] rounded-md px-2 py-1 text-left text-[9px] font-bold uppercase transition-opacity",
+                      "w-[60px] sm:w-[72px] rounded-md px-1.5 sm:px-2 py-1 text-left text-[8px] sm:text-[9px] font-bold uppercase transition-opacity",
                       hover && hover.row !== row && "opacity-40"
                     )}
                     style={{ backgroundColor: TYPE_COLORS[attacker], color: getContrastTextColor(TYPE_COLORS[attacker]) }}
@@ -252,7 +253,7 @@ const FullChart = () => {
                       onMouseEnter={() => setHover({ row, col })}
                       title={`${attacker} → ${defender}: ${m}×`}
                       className={cn(
-                        "h-7 w-7 rounded-md text-center font-bold transition-all",
+                        "h-6 w-6 sm:h-7 sm:w-7 rounded-md text-center font-bold transition-all",
                         MULT_CLASS[m],
                         active && "ring-1 ring-white/40",
                         hover?.row === row && hover?.col === col && "scale-125 ring-2 ring-white"
@@ -287,7 +288,7 @@ const PokemonTypeChart = () => {
       <div className="container mx-auto px-6 py-12 max-w-5xl">
         <div className="mb-12 text-center">
           <span className="eyebrow mb-5">✦ Gen 6 – Gen 9</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Pokémon Type Chart</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Pokémon Type Chart</h1>
           <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             Tap a type to see its full matchup — what it hits hard, what shrugs it off, and what to
             watch out for. Want the theory? Read{" "}

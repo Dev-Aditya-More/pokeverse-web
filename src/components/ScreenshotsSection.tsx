@@ -1,13 +1,13 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import screenshot1 from "@/assets/1.png";
-import screenshot2 from "@/assets/2.png";
-import screenshot3 from "@/assets/3.png";
-import screenshot4 from "@/assets/4.png";
-import screenshot5 from "@/assets/5.png";
-import screenshot6 from "@/assets/6.png";
-import screenshot7 from "@/assets/7.png";
-import screenshot8 from "@/assets/8.png";
+import screenshot1 from "@/assets/screenshot-1.webp";
+import screenshot2 from "@/assets/screenshot-2.webp";
+import screenshot3 from "@/assets/screenshot-3.webp";
+import screenshot4 from "@/assets/screenshot-4.webp";
+import screenshot5 from "@/assets/screenshot-5.webp";
+import screenshot6 from "@/assets/screenshot-6.webp";
+import screenshot7 from "@/assets/screenshot-7.webp";
+import screenshot8 from "@/assets/screenshot-8.webp";
 
 const screenshots = [
   {
@@ -67,6 +67,8 @@ const ShotCard = ({ shot, index }: { shot: (typeof screenshots)[number]; index: 
       <img
         src={shot.src}
         alt={shot.alt}
+        width={720}
+        height={1280}
         loading="lazy"
         decoding="async"
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -87,7 +89,7 @@ const ShotCard = ({ shot, index }: { shot: (typeof screenshots)[number]; index: 
 const Heading = () => (
   <div className="mb-12 text-center lg:mb-0 lg:w-[380px] lg:shrink-0 lg:text-left">
     <span className="eyebrow mb-6">✦ App preview</span>
-    <h2 className="mb-6 text-4xl font-extrabold md:text-5xl">
+    <h2 className="mb-6 text-3xl font-extrabold sm:text-4xl md:text-5xl">
       Built for beauty. <span className="text-gradient-fire">Built for speed.</span>
     </h2>
     <p className="text-lg leading-relaxed text-muted-foreground">
@@ -140,7 +142,7 @@ const ScreenshotsSection = () => {
       </section>
 
       {/* Mobile / tablet: native swipe */}
-      <section className="py-24 lg:hidden">
+      <section className="py-16 lg:hidden">
         <div className="container mx-auto px-6">
           <Heading />
         </div>

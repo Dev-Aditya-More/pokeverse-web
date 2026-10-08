@@ -15,10 +15,11 @@ const COLUMNS = [
   {
     heading: "Guides",
     links: [
-      { to: "/guides/pokemon-type-chart-explained", label: "Type chart explained" },
-      { to: "/guides/pokemon-evolution-explained", label: "Evolution methods" },
+      { to: "/guides/pokemon-nature-chart", label: "Nature chart" },
+      { to: "/guides/tera-types-explained", label: "Tera types explained" },
+      { to: "/guides/pokemon-team-building-guide", label: "Team building basics" },
+      { to: "/guides/best-pokemon-of-each-type", label: "Best of every type" },
       { to: "/guides/ivs-vs-evs-explained", label: "IVs vs EVs" },
-      { to: "/guides/pokemon-generations-guide", label: "Every generation" },
     ],
   },
   {
@@ -41,17 +42,17 @@ const Footer = () => {
   return (
     <footer className="relative mt-12 border-t border-white/10 bg-background/60 backdrop-blur-xl">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-accent opacity-40" />
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
-          <div>
+      <div className="container mx-auto px-6 py-12 md:py-16">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-[1.4fr_repeat(3,1fr)] lg:gap-12">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Link to="/" className="mb-4 inline-flex items-center gap-2.5">
               <Pokeball className="h-8 w-8" />
               <span className="font-display text-xl font-bold">Dexverse</span>
             </Link>
-            <p className="mb-6 max-w-sm leading-relaxed text-muted-foreground">
+            <p className="mb-6 max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-base">
               Built with passion and ❤️ for the Pokémon community — a free Pokédex app for Android.
             </p>
-            <div className="mb-6 flex gap-2">
+            <div className="mb-6 flex flex-wrap items-center gap-2">
               {SOCIALS.map(({ href, label, icon: Icon }) => (
                 <a
                   key={label}
@@ -80,8 +81,9 @@ const Footer = () => {
             </a>
           </div>
 
-          {COLUMNS.map((col) => (
-            <nav key={col.heading} aria-label={col.heading}>
+          {COLUMNS.map((col, i) => (
+            // On phones the third column spans the full row so the grid stays balanced.
+            <nav key={col.heading} aria-label={col.heading} className={i === 2 ? "col-span-2 sm:col-span-1" : undefined}>
               <h3 className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
                 {col.heading}
               </h3>
@@ -98,7 +100,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-muted-foreground md:flex-row">
+        <div className="mt-10 flex flex-col text-center md:mt-14 md:text-left items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-muted-foreground md:flex-row">
           <p>© {new Date().getFullYear()} Dexverse · Aditya More</p>
           <a
             href={PLAY_STORE_URL}

@@ -70,9 +70,19 @@
     color-scheme: dark;
   }
 
+  html,
+  body {
+    /* clip (not hidden) so position: sticky keeps working */
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
-    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  img {
+    max-width: 100%;
   }
 
   h1, h2, h3 {

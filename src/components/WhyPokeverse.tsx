@@ -47,7 +47,7 @@ function AnimatedStat({
       transition={{ delay, duration: 0.6 }}
       className="text-center"
     >
-      <div className="font-display text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+      <div className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
         {count}
         {suffix}
       </div>
@@ -81,7 +81,7 @@ const benefits = [
 
 const WhyPokeverse = () => {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Rich layered background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.07] to-transparent" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-accent opacity-25" />
@@ -92,7 +92,7 @@ const WhyPokeverse = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="eyebrow mb-6">✦ Why trainers love it</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 text-white">
               Why choose Dexverse?
             </h2>
             <p className="text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">

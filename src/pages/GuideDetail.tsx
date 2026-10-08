@@ -37,7 +37,7 @@ const GuideDetail = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      <article className="container mx-auto px-6 py-16 max-w-3xl">
+      <article className="container mx-auto px-5 sm:px-6 py-10 sm:py-16 max-w-3xl">
         <Link
           to="/guides"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 inline-block"
@@ -46,8 +46,8 @@ const GuideDetail = () => {
         </Link>
 
         <header className="mb-10">
-          <h1 className="text-4xl font-bold mb-4 leading-tight">{guide.title}</h1>
-          <p className="text-muted-foreground leading-relaxed text-lg">{guide.description}</p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">{guide.title}</h1>
+          <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">{guide.description}</p>
           <p className="text-xs uppercase tracking-wide text-accent font-semibold mt-4">
             {guide.readTime} · Updated {guide.updated}
           </p>
@@ -57,9 +57,38 @@ const GuideDetail = () => {
           {guide.blocks.map((block, i) => {
             if (block.type === "h2") {
               return (
-                <h2 key={i} className="text-2xl font-bold mt-10 mb-2">
+                <h2 key={i} className="text-xl sm:text-2xl font-bold mt-10 mb-2">
                   {block.text}
                 </h2>
+              );
+            }
+            if (block.type === "table") {
+              return (
+                <div key={i} className="glass overflow-x-auto rounded-2xl">
+                  <table className="w-full text-left text-[13px] sm:text-sm">
+                    <caption className="sr-only">{block.caption}</caption>
+                    <thead>
+                      <tr className="border-b border-white/10">
+                        {block.head.map((h) => (
+                          <th key={h} scope="col" className="px-3 py-3 font-semibold text-foreground sm:px-4">
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {block.rows.map((row, r) => (
+                        <tr key={r} className="border-b border-white/5 last:border-0">
+                          {row.map((cell, c) => (
+                            <td key={c} className={c === 0 ? "px-3 py-2.5 align-top font-semibold text-foreground sm:px-4" : "px-3 py-2.5 align-top text-muted-foreground sm:px-4"}>
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               );
             }
             if (block.type === "ul") {

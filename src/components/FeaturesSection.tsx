@@ -117,11 +117,11 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="relative scroll-mt-24 py-28">
+    <section id="features" className="relative scroll-mt-24 py-16 md:py-28">
       <div className="container mx-auto px-6">
         <div className="mb-16 text-center">
           <span className="eyebrow mb-6">✦ Built for trainers</span>
-          <h2 className="mx-auto mb-6 max-w-3xl text-4xl font-extrabold md:text-5xl">
+          <h2 className="mx-auto mb-6 max-w-3xl text-3xl font-extrabold sm:text-4xl md:text-5xl">
             Your ultimate <span className="text-gradient-accent">Pokémon arsenal</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">

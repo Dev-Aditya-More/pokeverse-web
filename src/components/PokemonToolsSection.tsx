@@ -85,11 +85,11 @@ const tools = [
 
 const PokemonToolsSection = () => {
   return (
-    <section className="relative py-28">
+    <section className="relative py-16 md:py-28">
       <div className="container mx-auto px-6">
         <div className="mb-16 text-center">
           <span className="eyebrow mb-6">✦ Free in your browser</span>
-          <h2 className="mb-6 text-4xl font-extrabold md:text-5xl">
+          <h2 className="mb-6 text-3xl font-extrabold sm:text-4xl md:text-5xl">
             More ways to <span className="text-gradient-fire">play</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">

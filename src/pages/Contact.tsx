@@ -56,7 +56,7 @@ const Contact = () => {
       </Helmet>
       <div className="container mx-auto px-6 py-16 max-w-3xl">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-3">Contact</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-3">Contact</h1>
           <p className="text-muted-foreground leading-relaxed">
             Have a question, found a bug, or just want to say hi? We'd love to hear from you.
             Choose the channel that works best for you below.

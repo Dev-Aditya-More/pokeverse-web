@@ -50,12 +50,12 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <section id="faq" className="scroll-mt-24 py-24">
+    <section id="faq" className="scroll-mt-24 py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <span className="eyebrow mb-6">✦ FAQ</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4">
               Frequently asked questions
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -70,7 +70,7 @@ const FaqSection = () => {
                 value={`item-${index}`}
                 className="glass rounded-2xl px-6 transition-colors data-[state=open]:border-accent/30"
               >
-                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-sans text-[15px] sm:text-base font-semibold text-foreground hover:no-underline py-5">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
