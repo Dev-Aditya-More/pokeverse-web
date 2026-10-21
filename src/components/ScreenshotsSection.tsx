@@ -1,13 +1,13 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import screenshot1 from "@/assets/screenshot-1.webp";
-import screenshot2 from "@/assets/screenshot-2.webp";
-import screenshot3 from "@/assets/screenshot-3.webp";
-import screenshot4 from "@/assets/screenshot-4.webp";
-import screenshot5 from "@/assets/screenshot-5.webp";
-import screenshot6 from "@/assets/screenshot-6.webp";
-import screenshot7 from "@/assets/screenshot-7.webp";
-import screenshot8 from "@/assets/screenshot-8.webp";
+import screenshot1 from "@/assets/ss1.webp";
+import screenshot2 from "@/assets/ss2.webp";
+import screenshot3 from "@/assets/ss3.webp";
+import screenshot4 from "@/assets/ss4.webp";
+import screenshot5 from "@/assets/ss5.webp";
+import screenshot6 from "@/assets/ss6.webp";
+import screenshot7 from "@/assets/ss7.webp";
+import screenshot8 from "@/assets/ss8.webp";
 
 const screenshots = [
   {
