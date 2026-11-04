@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
       <div className="container mx-auto px-6 py-16 max-w-3xl">
         <div className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">Privacy Policy</h1>
-          <p className="text-muted-foreground text-sm">Last updated: June 25, 2026</p>
+          <p className="text-muted-foreground text-sm">Last updated: November 4, 2026</p>
         </div>
 
         <div className="prose prose-neutral dark:prose-invert max-w-none space-y-8 text-foreground">
@@ -43,6 +43,18 @@ const PrivacyPolicy = () => {
                 This data never leaves your device.
               </li>
               <li>
+                <span className="font-medium text-foreground">Advertising Data:</span> If you
+                choose to watch a rewarded ad, our third-party advertising providers may collect
+                device information such as your advertising ID, IP address, and ad interaction
+                data in order to serve and measure the ad.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">Purchase Information:</span> If you
+                buy a monthly, yearly, or lifetime plan, the transaction is handled by Google Play.
+                We receive only the purchase status needed to unlock your plan. We do not receive
+                or store your payment details.
+              </li>
+              <li>
                 <span className="font-medium text-foreground">No Account Required:</span> Dexverse
                 does not require you to create an account and does not collect personally
                 identifiable information (PII) such as your name, email, or phone number.
@@ -58,6 +70,13 @@ const PrivacyPolicy = () => {
               Pokémon data. All requests to PokéAPI are made on your behalf and are governed by
               PokéAPI's own privacy practices. We do not share any personal data with PokéAPI, as
               no personal data is collected by Dexverse in the first place.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mt-3">
+              Dexverse also uses <span className="font-medium text-foreground">Google Play
+              Billing</span> to process in-app purchases and subscriptions, and third-party
+              advertising providers to show optional rewarded ads. These services operate under
+              their own privacy policies and may collect data as described in section 2. You can
+              reset or opt out of personalized ads through your Android device's Google settings.
             </p>
           </section>
 
@@ -75,8 +94,9 @@ const PrivacyPolicy = () => {
             <h2 className="text-xl font-semibold mb-3">5. Children's Privacy</h2>
             <p className="text-muted-foreground leading-relaxed">
               Dexverse does not knowingly collect personal information from children under the age
-              of 13. The App does not require registration and does not collect PII, making it safe
-              for users of all ages.
+              of 13. The App does not require registration and does not collect PII. Ads shown in the
+              App are optional and rewarded, and are served by third-party providers subject to
+              their own child-safety policies.
             </p>
           </section>
 

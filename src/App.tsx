@@ -18,6 +18,8 @@ const WhoIsThatPokemon = lazy(() => import("./pages/WhoIsThatPokemon"));
 const PokemonTypeChart = lazy(() => import("./pages/PokemonTypeChart"));
 const Guides = lazy(() => import("./pages/Guides"));
 const GuideDetail = lazy(() => import("./pages/GuideDetail"));
+const PokedexHub = lazy(() => import("./pages/PokedexHub"));
+const PokemonDetail = lazy(() => import("./pages/PokemonDetail"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -41,6 +43,8 @@ const App = () => (
               <Route path="/pokemon-type-chart" element={<PokemonTypeChart />} />
               <Route path="/guides" element={<Guides />} />
               <Route path="/guides/:slug" element={<GuideDetail />} />
+              <Route path="/pokemon" element={<PokedexHub />} />
+              <Route path="/pokemon/:slug" element={<PokemonDetail />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

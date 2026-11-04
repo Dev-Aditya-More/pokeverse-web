@@ -89,3 +89,22 @@ export function getTypeMatchups(type: PokemonType): TypeMatchups {
 
   return matchups;
 }
+
+export interface DefensiveProfile {
+  weakTo: { type: PokemonType; multiplier: number }[]; // 2x or 4x
+  resists: { type: PokemonType; multiplier: number }[]; // 0.5x or 0.25x
+  immuneTo: PokemonType[]; // 0x
+}
+
+/** How a Pokémon with the given 1-2 types fares against each attacking type. */
+export function getDefensiveProfile(types: PokemonType[]): DefensiveProfile {
+  const profile: DefensiveProfile = { weakTo: [], resists: [], immuneTo: [] };
+  for (const attacker of TYPE_LIST) {
+    const multiplier = types.reduce((acc, def) => acc * getMultiplier(attacker, def), 1);
+    if (multiplier === 0) profile.immuneTo.push(attacker);
+    else if (multiplier > 1) profile.weakTo.push({ type: attacker, multiplier });
+    else if (multiplier < 1) profile.resists.push({ type: attacker, multiplier });
+  }
+  profile.weakTo.sort((a, b) => b.multiplier - a.multiplier);
+  return profile;
+}

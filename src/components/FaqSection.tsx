@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "Is Dexverse free to download?",
     answer:
-      "Yes. Dexverse is completely free to download on Google Play. There are no in-app purchases, no subscriptions, and no sign-up required. Just install and start exploring.",
+      "Yes. Dexverse is free to download on Google Play, with no sign-up required. It includes optional rewarded ads that you choose to watch, plus optional in-app purchases with monthly, yearly, and lifetime plans. Just install and start exploring.",
   },
   {
     question: "Can I search Pokémon by type, ability, or generation?",

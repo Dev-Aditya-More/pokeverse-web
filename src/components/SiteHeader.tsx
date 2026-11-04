@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const NAV_LINKS = [
   { to: "/#features", label: "Features" },
   { to: "/who-is-that-pokemon", label: "Play" },
+  { to: "/pokemon", label: "Pokédex" },
   { to: "/pokemon-type-chart", label: "Type Chart" },
   { to: "/guides", label: "Guides" },
 ];

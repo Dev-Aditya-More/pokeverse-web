@@ -12,7 +12,7 @@ const TermsOfService = () => {
       <div className="container mx-auto px-6 py-16 max-w-3xl">
         <div className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold mb-3">Terms of Service</h1>
-          <p className="text-muted-foreground text-sm">Last updated: June 25, 2026</p>
+          <p className="text-muted-foreground text-sm">Last updated: November 4, 2026</p>
         </div>
 
         <div className="space-y-8 text-foreground">
@@ -28,10 +28,40 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-xl font-semibold mb-3">2. Description of Service</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Dexverse is a free Pokédex application that allows users to browse, search, and learn
-              about Pokémon using data provided by PokéAPI (pokeapi.co). The App is provided "as
-              is" for personal, non-commercial use.
+              Dexverse is a Pokédex application, free to download, that allows users to browse,
+              search, and learn about Pokémon using data provided by PokéAPI (pokeapi.co). The App
+              is provided "as is" for personal, non-commercial use. Some features may require
+              watching an optional rewarded ad or purchasing a paid plan, as described below.
             </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold mb-3">2A. Ads, Purchases & Subscriptions</h2>
+            <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+              <li>
+                <span className="font-medium text-foreground">Rewarded ads:</span> The App may
+                offer optional rewarded ads. Watching them is always your choice.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">Paid plans:</span> The App offers
+                in-app purchases in the form of monthly and yearly subscriptions and a one-time
+                lifetime plan. Prices are shown in the App and on Google Play before you buy.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">Billing:</span> Payments are
+                processed by Google Play. Subscriptions renew automatically until cancelled, and
+                you can cancel anytime in the Google Play subscriptions settings. Cancelling stops
+                future renewals but does not refund the current period unless required by law.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">Refunds:</span> Refund requests are
+                handled under Google Play's refund policy.
+              </li>
+              <li>
+                <span className="font-medium text-foreground">Changes:</span> Features, pricing,
+                and plans may change over time. "Lifetime" refers to the lifetime of the App.
+              </li>
+            </ul>
           </section>
 
           <section>

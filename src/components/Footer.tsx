@@ -8,6 +8,7 @@ const COLUMNS = [
     heading: "Play & learn",
     links: [
       { to: "/who-is-that-pokemon", label: "Who's That Pokémon?" },
+      { to: "/pokemon", label: "Pokédex" },
       { to: "/pokemon-type-chart", label: "Pokémon Type Chart" },
       { to: "/guides", label: "Pokémon Guides" },
     ],
