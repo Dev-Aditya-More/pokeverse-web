@@ -105,27 +105,27 @@ const routes = [
   },
   {
     path: "/who-is-that-pokemon",
-    title: "Who's That Pokémon? — Free Silhouette Guessing Game | Dexverse",
+    title: "Who's That Pokémon? Free Silhouette Quiz Game | Dexverse",
     description:
-      "Play Who's That Pokémon? for free. Guess the silhouette from all 1000+ Pokémon and build your streak. No sign-up, unlimited rounds.",
+      "Guess the Pokémon from its silhouette. Free quiz with 1000+ Pokémon, no sign-up, unlimited rounds. How long can your streak get?",
     lastmod: today,
     changefreq: "weekly",
     priority: "0.8",
   },
   {
     path: "/pokemon-type-chart",
-    title: "Pokémon Type Chart — Strengths & Weaknesses for Every Type | Dexverse",
+    title: "Pokémon Type Chart & Weakness Calculator (All 18 Types)",
     description:
-      "Full Pokémon type effectiveness chart for all 18 types, plus a dual-type weakness calculator. See what every type is strong against, weak to, resists, and is immune to.",
+      "Interactive Pokémon type chart with a dual-type weakness calculator. See what every type is super effective against, weak to, resists and is immune to.",
     lastmod: today,
     changefreq: "monthly",
     priority: "0.9",
   },
   {
     path: "/guides",
-    title: "Pokémon Guides — Types, Evolution, Stats & More | Dexverse",
+    title: "Pokémon Guides: Types, Evolution, IVs & EVs | Dexverse",
     description:
-      "Free Pokémon guides covering type matchups, evolution methods, IVs and EVs, and every generation from Kanto to Paldea, written by the Dexverse team.",
+      "Beginner-friendly Pokémon guides on type matchups, evolution methods, IVs and EVs, and every generation from Kanto to Paldea.",
     lastmod: guides.map((g) => g.lastmod).sort().at(-1),
     changefreq: "weekly",
     priority: "0.8",
@@ -133,9 +133,9 @@ const routes = [
   ...guides,
   {
     path: "/pokemon",
-    title: "Pokédex — Stats, Weaknesses & Evolution for All 1025 Pokémon | Dexverse",
+    title: "Pokédex: All 1025 Pokémon – Stats & Weaknesses | Dexverse",
     description:
-      "Browse every Pokémon from Bulbasaur to Pecharunt. Open any entry for base stats, abilities, type weaknesses, evolution chain and moveset.",
+      "Browse the full Pokédex from Bulbasaur to Pecharunt. Open any Pokémon for base stats, abilities, type weaknesses, evolutions and moves.",
     body: hubBody,
     lastmod: today,
     changefreq: "weekly",

@@ -277,10 +277,10 @@ const PokemonTypeChart = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>Pokémon Type Chart — Strengths & Weaknesses for Every Type | Dexverse</title>
+        <title>Pokémon Type Chart & Weakness Calculator (All 18 Types)</title>
         <meta
           name="description"
-          content="Full Pokémon type effectiveness chart for all 18 types, plus a dual-type weakness calculator. See what every type is strong against, weak to, resists, and is immune to."
+          content="Interactive Pokémon type chart with a dual-type weakness calculator. See what every type is super effective against, weak to, resists and is immune to."
         />
         <link rel="canonical" href="https://dexverse.in/pokemon-type-chart" />
       </Helmet>

@@ -19,10 +19,10 @@ const Guides = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>Pokémon Guides — Types, Evolution, Stats & More | Dexverse</title>
+        <title>Pokémon Guides: Types, Evolution, IVs & EVs | Dexverse</title>
         <meta
           name="description"
-          content="Free Pokémon guides covering type matchups, evolution methods, IVs and EVs, and every generation from Kanto to Paldea, written by the Dexverse team."
+          content="Beginner-friendly Pokémon guides on type matchups, evolution methods, IVs and EVs, and every generation from Kanto to Paldea."
         />
         <link rel="canonical" href="https://dexverse.in/guides" />
       </Helmet>

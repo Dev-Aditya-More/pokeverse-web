@@ -35,17 +35,15 @@ export function joinList(items: string[]): string {
 }
 
 export function pokemonMetaTitle(p: PokemonDetail): string {
-  return `${p.name} (${dexNumber(p.id)}) — Stats, Weaknesses & Evolution | Dexverse`;
+  return `${p.name} Weaknesses, Stats & Evolution | Dexverse`;
 }
 
 export function pokemonMetaDescription(p: PokemonDetail, profile: DefensiveProfile): string {
   const weak = profile.weakTo.map((w) => cap(w.type));
-  const parts = [
-    `${p.name} is a ${typeLabel(p.types)}-type Pokémon with a base stat total of ${p.total}.`,
-    weak.length ? `Weak to ${joinList(weak)}.` : "",
-    "See full base stats, abilities, evolution chain and moveset.",
-  ];
-  return parts.filter(Boolean).join(" ");
+  const lead = weak.length
+    ? `${p.name} (${typeLabel(p.types)}) is weak to ${joinList(weak)}.`
+    : `${p.name} (${typeLabel(p.types)}) has no type weaknesses.`;
+  return `${lead} See its base stats (BST ${p.total}), abilities, evolution chain, level-up moves and type matchups on Dexverse.`;
 }
 
 export function pokemonIntro(p: PokemonDetail, profile: DefensiveProfile): string {

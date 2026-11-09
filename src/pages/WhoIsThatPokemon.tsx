@@ -117,10 +117,10 @@ const WhoIsThatPokemon = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>Who's That Pokémon? — Free Silhouette Guessing Game | Dexverse</title>
+        <title>Who's That Pokémon? Free Silhouette Quiz Game | Dexverse</title>
         <meta
           name="description"
-          content="Play Who's That Pokémon? for free. Guess the silhouette from all 1000+ Pokémon and build your streak. No sign-up, unlimited rounds."
+          content="Guess the Pokémon from its silhouette. Free quiz with 1000+ Pokémon, no sign-up, unlimited rounds. How long can your streak get?"
         />
         <link rel="canonical" href="https://dexverse.in/who-is-that-pokemon" />
       </Helmet>

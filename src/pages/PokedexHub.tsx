@@ -51,10 +51,10 @@ const PokedexHub = () => {
   return (
     <PageLayout>
       <Helmet>
-        <title>Pokédex — Stats, Weaknesses & Evolution for All 1025 Pokémon | Dexverse</title>
+        <title>Pokédex: All 1025 Pokémon – Stats & Weaknesses | Dexverse</title>
         <meta
           name="description"
-          content="Browse every Pokémon from Bulbasaur to Pecharunt. Open any entry for base stats, abilities, type weaknesses, evolution chain and moveset."
+          content="Browse the full Pokédex from Bulbasaur to Pecharunt. Open any Pokémon for base stats, abilities, type weaknesses, evolutions and moves."
         />
         <link rel="canonical" href="https://dexverse.in/pokemon" />
       </Helmet>
