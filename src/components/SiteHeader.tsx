@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Download, Menu, X } from "lucide-react";
+import { Gamepad2, Menu, X } from "lucide-react";
 import Pokeball from "@/components/immersive/Pokeball";
-import { PLAY_STORE_URL } from "@/lib/links";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -62,15 +61,13 @@ const SiteHeader = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <a
-            href={PLAY_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/who-is-that-pokemon"
             className="hidden items-center gap-2 rounded-full bg-gradient-hero px-4 py-2 text-sm font-semibold text-white shadow-medium transition-transform hover:scale-105 sm:inline-flex"
           >
-            <Download className="h-4 w-4" />
-            Get the app
-          </a>
+            <Gamepad2 className="h-4 w-4" />
+            Play now
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -99,15 +96,14 @@ const SiteHeader = () => {
               {link.label}
             </Link>
           ))}
-          <a
-            href={PLAY_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/who-is-that-pokemon"
+            onClick={() => setOpen(false)}
             className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-gradient-hero px-4 py-3 font-semibold text-white"
           >
-            <Download className="h-4 w-4" />
-            Get the app for free
-          </a>
+            <Gamepad2 className="h-4 w-4" />
+            Play now
+          </Link>
         </motion.div>
       )}
 

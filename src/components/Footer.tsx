@@ -1,7 +1,7 @@
 import { Github, Mail, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 import Pokeball from "@/components/immersive/Pokeball";
-import { CONTACT_EMAIL, GITHUB_URL, PLAY_STORE_URL, TWITTER_URL } from "@/lib/links";
+import { CONTACT_EMAIL, GITHUB_URL, TWITTER_URL } from "@/lib/links";
 
 const COLUMNS = [
   {
@@ -103,14 +103,12 @@ const Footer = () => {
 
         <div className="mt-10 flex flex-col text-center md:mt-14 md:text-left items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-muted-foreground md:flex-row">
           <p>© {new Date().getFullYear()} Dexverse · Aditya More</p>
-          <a
-            href={PLAY_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-accent hover:underline"
-          >
-            Download free on Google Play →
-          </a>
+          <p className="text-white/60">
+            Android app temporarily unavailable.{" "}
+            <Link to="/pokemon" className="font-semibold text-accent hover:underline">
+              Use the website meanwhile →
+            </Link>
+          </p>
         </div>
         <p className="mt-6 text-center text-xs text-white/35 md:text-left">
           Pokémon and related names are trademarks of Nintendo, Game Freak and The Pokémon Company.

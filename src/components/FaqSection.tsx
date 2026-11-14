@@ -17,9 +17,9 @@ const faqs = [
       "Dexverse includes all 1000+ Pokémon across every generation, from Generation 1 (Kanto) through the latest Pokémon titles. This includes regional forms, Mega Evolutions, Gigantamax forms, and Paradox Pokémon.",
   },
   {
-    question: "Is Dexverse free to download?",
+    question: "Is Dexverse free to use?",
     answer:
-      "Yes. Dexverse is free to download on Google Play, with no sign-up required. It includes optional rewarded ads that you choose to watch, plus optional in-app purchases with monthly, yearly, and lifetime plans. Just install and start exploring.",
+      "Yes. The Dexverse website is free to use with no sign-up required. The Android app is temporarily unavailable on Google Play, so for now the website is the best way to explore the Pokédex.",
   },
   {
     question: "Can I search Pokémon by type, ability, or generation?",
@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "Is Dexverse available on iPhone or iOS?",
     answer:
-      "Currently Dexverse is available for Android only on Google Play. An iOS version is planned for a future release.",
+      "Not yet. The Android app is temporarily unavailable, but the Dexverse website works in any browser, including on iPhone. A native iOS app is planned for a future release.",
   },
 ];
 

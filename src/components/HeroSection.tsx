@@ -8,11 +8,10 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { ChevronDown, Download, Gamepad2, Star } from "lucide-react";
+import { ChevronDown, Gamepad2, Info, Star } from "lucide-react";
 import Pokeball from "@/components/immersive/Pokeball";
 import { SHOWCASE, artworkUrl } from "@/lib/sprites";
 import { TYPE_COLORS, getContrastTextColor } from "@/data/typeChart";
-import { PLAY_STORE_URL } from "@/lib/links";
 
 const ROTATE_MS = 4200;
 
@@ -69,7 +68,7 @@ const HeroSection = () => {
           <div className="glass mb-6 inline-flex items-center gap-2 whitespace-nowrap rounded-full px-3.5 py-2 text-xs font-medium text-white/90 sm:mb-8 sm:gap-2.5 sm:px-4 sm:text-sm">
             <span className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.9)] animate-pulse-dot" />
             <Star className="h-3.5 w-3.5 fill-accent-yellow text-accent-yellow" />
-            Free on Google Play<span className="hidden min-[360px]:inline"> · 10k+ trainers</span>
+            Free Pokédex<span className="hidden min-[360px]:inline"> · 10k+ trainers</span>
           </div>
 
           <h1 className="mb-6 font-display font-extrabold leading-[0.95]">
@@ -81,28 +80,29 @@ const HeroSection = () => {
 
           <p className="mx-auto mb-8 max-w-xl text-base sm:mb-10 leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
             All 1,025 Pokémon from Kanto to Paldea: stats, evolutions, movesets and type
-            matchups, plus a team builder and mini games. A free Pokédex app for Android, built
+            matchups, plus a team builder and mini games. Explore it all free on the website, built
             by a trainer, for trainers.
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex w-full max-w-xs items-center whitespace-nowrap sm:w-auto sm:min-w-[230px] justify-center gap-2.5 rounded-2xl bg-gradient-hero px-8 py-4 text-base font-semibold text-white glow-red transition-transform duration-300 hover:scale-105"
-            >
-              <Download className="h-5 w-5 transition-transform group-hover:translate-y-0.5" />
-              Get it on Google Play
-            </a>
             <Link
               to="/who-is-that-pokemon"
-              className="glass inline-flex w-full max-w-xs items-center justify-center gap-2.5 whitespace-nowrap rounded-2xl px-6 py-4 sm:w-auto text-base font-semibold text-white transition-colors hover:bg-white/10"
+              className="group inline-flex w-full max-w-xs items-center whitespace-nowrap sm:w-auto sm:min-w-[230px] justify-center gap-2.5 rounded-2xl bg-gradient-hero px-8 py-4 text-base font-semibold text-white glow-red transition-transform duration-300 hover:scale-105"
             >
-              <Gamepad2 className="h-5 w-5 text-accent" />
+              <Gamepad2 className="h-5 w-5" />
               Play in your browser
             </Link>
+            <Link
+              to="/pokemon"
+              className="glass inline-flex w-full max-w-xs items-center justify-center gap-2.5 whitespace-nowrap rounded-2xl px-6 py-4 sm:w-auto text-base font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Browse the Pokédex
+            </Link>
           </div>
+          <p className="mx-auto mt-5 flex max-w-md items-start justify-center gap-2 text-sm text-white/60 lg:mx-0 lg:justify-start">
+            <Info className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+            <span>The Android app is temporarily unavailable. Enjoy the Dexverse website until it returns.</span>
+          </p>
 
           <dl className="mt-10 flex justify-center gap-6 sm:mt-12 sm:gap-12 lg:justify-start">
             {[

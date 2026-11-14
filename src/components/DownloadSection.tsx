@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Check, Download } from "lucide-react";
+import { Check, Gamepad2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import Pokeball from "@/components/immersive/Pokeball";
-import { PLAY_STORE_URL } from "@/lib/links";
 
-const perks = ["Free to download, forever", "No sign-up required", "Regular updates with new features"];
+const perks = ["Free to use, forever", "No sign-up required", "Works in any browser"];
 
 const DownloadSection = () => {
   return (
@@ -22,24 +22,22 @@ const DownloadSection = () => {
 
           <div className="relative">
             <Pokeball className="mx-auto mb-6 h-16 w-16 animate-pokeball-wobble sm:mb-8 sm:h-20 sm:w-20" />
-            <span className="eyebrow mb-6">✦ Join 10k+ trainers</span>
+            <span className="eyebrow mb-6">✦ Android app temporarily unavailable</span>
             <h2 className="mx-auto mb-6 max-w-2xl text-3xl font-extrabold sm:text-4xl md:text-6xl">
-              Ready to start your journey?
+              The app is taking a short break
             </h2>
             <p className="mx-auto mb-8 max-w-xl text-base leading-relaxed text-white/75 sm:mb-10 sm:text-lg">
-              Carry the complete Pokédex in your pocket, designed for trainers who care about every
-              detail.
+              The Dexverse Android app is temporarily unavailable. Until it&apos;s back, you can enjoy
+              the full Dexverse experience right here on the website.
             </p>
 
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/who-is-that-pokemon"
               className="group inline-flex items-center gap-3 whitespace-nowrap rounded-2xl bg-white px-6 py-4 text-base font-bold sm:px-8 sm:text-lg text-background shadow-large transition-transform duration-300 hover:scale-105"
             >
-              <Download className="h-5 w-5 transition-transform group-hover:translate-y-0.5" />
-              Get it on Google Play
-            </a>
+              <Gamepad2 className="h-5 w-5" />
+              Play in your browser
+            </Link>
 
             <ul className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:gap-8">
               {perks.map((perk) => (
